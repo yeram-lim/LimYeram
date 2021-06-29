@@ -57,11 +57,29 @@ div#header-search h1 {/* 자식 선택할 때 > 꺽새 사용 */
     height: 49px;
     display: inline-block;
     border: 2px solid #03cf5d; /*hex color, 구글에서 찾아 쓰면 됨*/
-    vertical-align: middle;
+    vertical-align: middle; /*정렬하기*/
 }
 
 #header-search fieldset input {
     border: none;
     padding: 0;
     outline: none;
+}
+
+#header-search fieldset button {
+    width: 49px;
+    height: 49px;
+    border: none;
+    padding: 0;
+    background: #03cf5d;
+}
+
+#search-image {
+    background-image: url(./sp_search.png);
+    background-position: -4px -60px;
+    background-repeat: none;
+    width: 21px;
+    height: 21px;
+    display: inline-block;
+    margin: 14px;
 }
