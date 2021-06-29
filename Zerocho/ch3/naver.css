@@ -31,7 +31,7 @@ div#header-search h1 {/* 자식 선택할 때 > 꺽새 사용 */
     /*background-repeat: no-repeat; 배경화면을 반복x*/
     background: url(./sp_search.png) -4px -4px no-repeat;
     vertical-align: middle;
-    position: relative;/*다른애들 안 건들이고 위치 조정*/
+    position: relative;/*다른애들 안 건들이고 내 원래 위치에서 상대적인 움직임 조정*/
     top: -6px;
 } 
 
@@ -60,7 +60,7 @@ div#header-search h1 {/* 자식 선택할 때 > 꺽새 사용 */
     display: inline-block;
     border: 2px solid #03cf5d; /*hex color, 구글에서 찾아 쓰면 됨*/
     vertical-align: middle; /*정렬하기*/
-    position: relative; 
+    position: relative; /*상대적 자리로 바꿔서 검색버튼(절대적 위치)이 여기에 붙도록 한다.*/
 }
 
 #header-search fieldset input {
@@ -78,7 +78,7 @@ div#header-search h1 {/* 자식 선택할 때 > 꺽새 사용 */
     border: none;
     padding: 0;
     background: #03cf5d;
-    position: absolute; /*자리 위치 마음대로*/
+    position: absolute; /*절대적인 자리 위치, 전체적인 화면을 기준으로 움직임*/
     right: -2px;
     top: -2px;
 }
