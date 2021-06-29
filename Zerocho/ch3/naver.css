@@ -1,3 +1,7 @@
+*{ /*모든 태그를 지칭한다. 모든 태그의 박스는 보더 박스로 하는 것, 박스를 border 기준으로 해서 너비 잰다.*/
+    box-sizing: border-box;
+}
+
 /*css는 조장, 부모의 css태그를 덮어쓴다.*/
 /* 선택자(selector) */
 .blind { /* 점은 클래스, 클래스는 같은 이름 사용 가능 */
@@ -26,6 +30,7 @@ div#header-search h1 {/* 자식 선택할 때 > 꺽새 사용 */
     /*background-position: -4px -10px; -왼쪽과 아래쪽*/
     /*background-repeat: no-repeat; 배경화면을 반복x*/
     background: url(./sp_search.png) -4px -4px no-repeat;
+    vertical-align: middle;
 } 
 
 #header-search h1 span{
@@ -47,10 +52,16 @@ div#header-search h1 {/* 자식 선택할 때 > 꺽새 사용 */
     padding-bottom: 12px;    
     padding-left: 10px;
     padding-right: 10px;*/
-    padding 12px 0 12px 10px; /*위 오 아 왼, 시계방향*/
+    padding: 12px 0 12px 10px; /*위 오 아 왼, 시계방향*/
     width: 521px;
     height: 49px;
     display: inline-block;
-    border: 2px solid #03cf5d;
+    border: 2px solid #03cf5d; /*hex color, 구글에서 찾아 쓰면 됨*/
+    vertical-align: middle;
 }
 
+#header-search fieldset input {
+    border: none;
+    padding: 0;
+    outline: none;
+}
