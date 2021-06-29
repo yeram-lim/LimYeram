@@ -1,7 +1,27 @@
 /*css는 조장, 부모의 css태그를 덮어쓴다.*/
 /* 선택자(selector) */
 
-div#header-center{ /* html의 id 불러올 때 #을 사용하기, div는 하도 많이 사용해서 #앞의 div만 생략 가능*/
+div#header-center { /* html의 id 불러올 때 #을 사용하기, div는 하도 많이 사용해서 #앞의 div만 생략 가능*/
     margin: 0 auto;
     width: 1080px;
 }
+
+div#header-search > h1 {/* 자식 선택할 때 > 꺽새 사용 */
+    width: 280px;
+    display: inline-block; /*경계를 줄여준다. 블록 크기 지정 가능*/
+} 
+
+/*div#header-center h1{  
+    자손(손자,손자의 자식 등등 모두) 선택할 때 그냥 띄어쓰기 사용
+} 
+*/
+
+#header-search h2 { /* 시각장애인들을 위해 표시는 하지만 화면에는 안 보이게 만들기 */
+    display: none;
+}
+
+#header-search fieldset {
+    width: 520px;
+    display: inline-block;
+}
+

@@ -10,27 +10,33 @@
     <header><!--div는 별다른 기능은 없고 구역을 나누어 주는 것, header는 div의 일종, 가로줄 모두 차지-->
         <div id="header-center"><!--가운데 정렬용 div, 가운데 정렬은 css 쓸거얌! 그리고 너비를 1080으로-->
             <!--css 문법: 속성명: 값;-->
-            <!--css를 html 문서에 넣는 것을 인라인 스타일이라고 한다.-->
-            <h1>
+            <!--인라인 스타일:css를 html 문서에 넣는 것-->
+            <div><!--div를 사용해 가로로 계속 쪼갬-->
+                <span>네이버를 시작 페이지로</span> <!--span은 inline과 비슷한데 내용글자수 만큼 블록을 만듦-->
+                <span>쥬니어 네이버</span>
+                <span>해피빈</span>
+            </div>
+            <div id="header-search">
+                <h1>
                 <a href="https://www.naver.com">네이버</a> <!--a 태그는 홈페이지를 옮겨가게 하는 것 -->
                 <!-- 주석(comment)입니다 -->
                 <!-- 속성(attribute)입니다 -->
-            </h1>
-            <h2>검색창</h2>
-            <fieldset>
-                <legend>검색</legend>
-                <input /> <!--입력창-->
-                <button>검색</button> <!--******클릭이 되는 버튼********-->
-            </fieldset>
+                </h1>
+                <h2>검색창</h2>
+                <fieldset>
+                    <legend>검색</legend>
+                    <input /> <!--입력창-->
+                    <button>검색</button> <!--******클릭이 되는 버튼********-->
+                </fieldset>
+            </div>
         </div>
     </header>
     <nav><!--얘도 div 일종으로 div는 이름을 짓는 것이 좋다.-->
         <ul> <!--unordered list/ ol은 ordered list로 번호가 붙는다-->
             <li>메일</li><!--list item-->
-            <li>카페</li><!--list item-->
-            <li>블로그</li><!--list item-->
-            <li>지식인</li><!--list item-->
-            <li>쇼핑</li>
+            <li>카페</li>
+            <li>블로그</li>
+            <li>지식인</li>
             <li>네이버 페이</li>
             <li>네이버 쇼핑</li>
         </ul>
