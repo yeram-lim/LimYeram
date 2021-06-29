@@ -4,20 +4,25 @@
     <meta charset="utf-8"/>
     <title>my네이버</title>
     <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico?1">
+    <link rel="stylesheet" href="./naver.css"> <!--css 파일 있다는 것 알려주기-->
 </head>
 <body>
     <header><!--div는 별다른 기능은 없고 구역을 나누어 주는 것, header는 div의 일종, 가로줄 모두 차지-->
-        <h1>
-            <a href="https://www.naver.com">네이버</a> <!--a 태그는 홈페이지를 옮겨가게 하는 것 -->
-            <!-- 주석(comment)입니다 -->
-            <!-- 속성(attribute)입니다 -->
-        </h1>
-        <h2>검색창</h2>
-        <fieldset>
-            <legend>검색</legend>
-            <input /> <!--입력창-->
-            <button>검색</button> <!--******클릭이 되는 버튼********-->
-        </fieldset>
+        <div id="header-center"><!--가운데 정렬용 div, 가운데 정렬은 css 쓸거얌! 그리고 너비를 1080으로-->
+            <!--css 문법: 속성명: 값;-->
+            <!--css를 html 문서에 넣는 것을 인라인 스타일이라고 한다.-->
+            <h1>
+                <a href="https://www.naver.com">네이버</a> <!--a 태그는 홈페이지를 옮겨가게 하는 것 -->
+                <!-- 주석(comment)입니다 -->
+                <!-- 속성(attribute)입니다 -->
+            </h1>
+            <h2>검색창</h2>
+            <fieldset>
+                <legend>검색</legend>
+                <input /> <!--입력창-->
+                <button>검색</button> <!--******클릭이 되는 버튼********-->
+            </fieldset>
+        </div>
     </header>
     <nav><!--얘도 div 일종으로 div는 이름을 짓는 것이 좋다.-->
         <ul> <!--unordered list/ ol은 ordered list로 번호가 붙는다-->
