@@ -7,27 +7,32 @@ html, body {
     padding: 0;
 }
 
-div#header {
+h1, h2, h3, h4, h5, h6{
+    margin: 0;
+}
+
+
+#header {
     margin: 0 auto;
     width: 1080px;
 }
 
-div#header h3 {
+#header h3 {
     margin: 0;
     padding: 8px 0 8px 0;
     width: 1260px;
     height: 72px;
 }
 
-div#header h6 {
+#header h6 {
     display: none;
 }
 
-div#header fieldset {
+#header fieldset {
     display: inline-block
 }
 
-div#header button {
+#header button {
     margin-right: 32px;
     padding: 4px 8px 4px 8px;
     border: 1px solid var;
@@ -35,8 +40,28 @@ div#header button {
     background-color: transparent;
 }
 
-div#header > h3 button:first-child {
+#header > h3 button:first-child {
     border: none !important;
+}
+
+main {
+    margin-left: 250px;
+    margin-right: 250px;
+    padding: 50px 50px;
+}
+
+
+#main-introduce{
+    width: 400px;
+    margin: 0;
+    vertical-align: top;
+
+}
+
+#main-sign{
+    width: 400px;
+    margin: 0;
+    vertical-align: top;
 }
 
 #HowMuch > h4 {
