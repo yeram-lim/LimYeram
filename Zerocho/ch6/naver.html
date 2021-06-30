@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8"/>
+    <title>my네이버</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico?1">
+    <link rel="stylesheet" href="./naver.css"> <!--css 파일 있다는 것 알려주기-->
+</head>
+<body>
+    <div style="height: 20px; margin-bottom: 20px; background: yellow;"></div>
+    <div style="height: 20px; margin-top: 20px; background: green;"></div> <!--마진상쇄-->
+    <header><!--div는 별다른 기능은 없고 구역 나눔, header는 div의 일종, 가로줄 모두 차지-->
+        <div class="center-align"><!--가운데 정렬용 div, 가운데 정렬은 css 쓸거얌! 그리고 너비를 1080으로-->
+            <!--css 문법: 속성명: 값;-->
+            <!--인라인 스타일: css를 html 문서에 넣는 것-->
+            <div id="header-top"><!--div를 사용해 가로로 계속 쪼갬-->
+                <span>네이버를 시작 페이지로 > | </span> <!--span은 inline과 비슷한데 내용글자수 만큼 블록을 만듦-->
+                <span>쥬니어 네이버 | </span>
+                <span>해피빈</span>
+            </div>
+            <div id="header-search">
+                <a href="https://www.naver.com">
+                    <h1>
+                        <span>네이버</span>
+                    </h1>
+                </a> <!--a 태그는 홈페이지를 옮겨가게 하는 것 -->
+                <h2 class="blind">검색창</h2>
+                <fieldset>
+                    <legend class="blind">검색</legend>
+                    <input /> <!--입력창-->
+                    <span id="search-keyboard"></span>
+                    <span id="search-history"></span>
+                    <button><!--******클릭이 되는 버튼********-->
+                        <span class="blind">검색</span>
+                        <span id="search-image"></span> <!--검색용 이미지-->
+                    </button> 
+                </fieldset>
+            </div>
+        </div>
+    </header>
+    <nav><!--얘도 div 일종으로 div는 이름을 짓는 것이 좋다.-->
+        <div class="center-align relative">
+            <div id="search-ranking">
+                <h2 class="blind">실시간 검색어</h2>
+                <sapn id="rank-number">1</sapn>
+                <span id="rank-title">제로초</span>
+            </div>
+            <ul> <!--unordered list/ ol은 ordered list로 번호가 붙는다-->
+                <li>
+                    <a href="">
+                        <span class="nav_item_mail"></span>
+                        <span class="blind">메일</span>
+                    </a>
+                </li><!--list item-->
+                <li><a href=""><span></span><span class="blind">카페</span></a></li>
+                <li><a href=""><span></span><span class="blind">블로그</span></a></li>
+                <li><a href=""><span></span><span class="blind">지식인</span></a></li>
+                <li><a href=""><span></span><span class="blind">네이버 쇼핑</span></a></li>
+                <li><a href=""><span></span><span class="blind">네이버 페이</span></a></li>
+                <li><a href=""><span></span><span class="blind">네이버TV</span></a></li>
+                <li><a href=""><span></span><span class="blind">사전</span></a></li>
+                <li><a href=""><span></span><span class="blind">뉴스</span></a></li>
+                <li><a href=""><span></span><span class="blind">증권</span></a></li>
+                <li><a href=""><span></span><span class="blind">부동산</span></a></li>
+                <li><a href=""><span></span><span class="blind">지도</span></a></li>
+                <li><a href=""><span></span><span class="blind">영화</span></a></li>
+                <li><a href=""><span></span><span class="blind">뮤직</span></a></li>
+                <li><a href=""><span></span><span class="blind">책</span></a></li>
+                <li><a href=""><span></span><span class="blind">웹툰</span></a></li>
+            </ul>
+            <div class="nav-divider"></div> <!--구분선-->
+            <ul>
+                <li class="more"><a href=""><span></span><span class="blind">더보기</span></a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <div id="main-centered" class="center-align">
+            <h3>연합뉴스</h3>
+            <ol>
+                <li>Pirogramming</li>
+                <li>1일차 과제</li>
+                <li>NAVER 만들기</li>
+            </ol>
+            <h3>언론사 목록</h3>
+            <ul>
+                <li><img src="./MBN.png" alt="MBN" /></li><!--이미지에는 설명을 달자-->
+                <li><img src="./NEWSIS.png" alt="NEWSIS" /></li>
+                <li><img src="./osen.png" alt="osen" /></li>
+                <li><img src="./매일경제.png" alt="매일경제" /></li>
+                <li><img src="./파이낸셜뉴스.png" alt="파이낸셜뉴스" /></li>
+                <li><img src="./한국경제TV.png" alt="한국경제TV" /></li>
+                <li><img src="./과학동아.png" alt="과학동아" /></li>
+                <li><img src="./한국일보.png" alt="한국일보" /></li>
+                <li><img src="./osen.png" alt="osen" /></li>
+                <li><img src="./매일경제.png" alt="매일경제" /></li>
+                <li><img src="./파이낸셜뉴스.png" alt="파이낸셜뉴스" /></li>
+                <li><img src="./한국경제TV.png" alt="한국경제TV" /></li>
+                <li><img src="./과학동아.png" alt="과학동아" /></li>
+                <li><img src="./한국일보.png" alt="한국일보" /></li>
+                <li><img src="./osen.png" alt="osen" /></li>
+                <li><img src="./매일경제.png" alt="매일경제" /></li>
+                <li><img src="./파이낸셜뉴스.png" alt="파이낸셜뉴스" /></li>
+                <li><img src="./한국경제TV.png" alt="한국경제TV" /></li>                
+            </ul>
+            <h3>로그인</h3>
+            <h3>뉴스</h3>
+            <h3>법률</h3>
+            <h3>쇼핑</h3>
+            <h6>쇼핑</h6>
+        </div>
+    </main>
+    <footer>
+        <div id = "footer">공지사항</div>
+        <div>creaters</div>
+        <div>회사소개</div>
+    </footer>
+</body>
+</html>

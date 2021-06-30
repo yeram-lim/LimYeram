@@ -1,0 +1,298 @@
+*{ /*모든 태그를 지칭한다. 모든 태그의 박스는 보더 박스로 하는 것, 박스를 border 기준으로 해서 너비 잰다.*/
+    box-sizing: border-box;
+}
+
+html, body{ /* 얘네는 기본적으로 공백 없애고 시작*/
+    margin: 0;
+    padding: 0;
+    font-family: Dotum, '돋움', Helvetica, "Apple SD Gothic Neo", sans-serif; /*글씨체 컴퓨터에 존재하는 순서대로 넣어줌*/
+}
+
+#fixed{
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    border-radius: 50px; /*둥글게 둥글게*/
+}
+
+/*css는 조장, 부모의 css태그를 덮어쓴다.*/
+/* 선택자(selector) */
+.blind { /* 점은 클래스, 클래스는 같은 이름 사용 가능 */
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+
+.relative {
+    position: relative;
+}
+
+.center-align { /* html의 id 불러올 때 #을 사용하기, div는 하도 많이 사용해서 #앞의 div만 생략 가능*/
+    margin: 0 auto;
+    width: 1080px;
+}
+
+header {
+    height: 170px;
+}
+
+#header-top{
+    float: right; /*오른쪽으로 보내는데 그 만큼 자리를 차지한다. 둥둥둥*/
+    margin-top: 8px;
+}
+
+#header-top sapn {
+    color: #404040;
+    letter-spacing: -1px; /*글자 사이 간격*/
+    font-size: 11px;
+    line-height: 22px; /*글자 차지할 높이. 폰트랑 다름. 줄바꿈이랑 비슷*/
+}
+
+#header-search {
+    clear: both; /*float와 안 겹치게 만들어준다.*/
+    padding-top: 12px;
+}
+#header-search a {
+    text-decoration: none;
+}
+
+div#header-search h1 {/* 자식 선택할 때 > 꺽새 사용 */
+    width: 198px;
+    height: 48px;
+    display: inline-block; /*경계를 줄여준다. 블록 크기 지정 가능*/
+    /*background-image: url(./sp_search.png); 배경화면 가져오기*/
+    /*background-position: -4px -10px; -왼쪽과 아래쪽*/
+    /*background-repeat: no-repeat; 배경화면을 반복x*/
+    background: url(./sp_search.png) -4px -4px no-repeat;
+    vertical-align: middle;
+    position: relative;/*다른애들 안 건들이고 내 원래 위치에서 상대적인 움직임 조정*/
+    top: -5px;
+    left: 1px;
+} 
+
+#header-search h1 span{
+    display: none;
+}
+
+/*div#header-center h1{  
+    자손(손자,손자의 자식 등등 모두) 선택할 때 그냥 띄어쓰기 사용
+} 
+*/
+
+#header-search h2 { /* 시각장애인들을 위해 표시는 하지만 화면에는 안 보이게 만들기 */
+    display: none; /* 일반사람 눈에는 안보이고 검색 엔진이 읽는다 */
+}
+
+#header-search fieldset {
+    margin-left: 20px;
+    /*padding-top: 12px;
+    padding-bottom: 12px;    
+    padding-left: 10px;
+    padding-right: 10px;*/
+    padding: 12px 0 12px 10px; /*위 오 아 왼, 시계방향*/
+    width: 521px;
+    height: 49px;
+    display: inline-block;
+    border: 2px solid #03cf5d; /*hex color, 구글에서 찾아 쓰면 됨*/
+    vertical-align: middle; /*정렬하기*/
+    position: relative; /*상대적 자리로 바꿔서 검색버튼(절대적 위치)이 여기에 붙도록 한다.*/
+}
+
+#header-search fieldset input {
+    border: none;
+    padding: 0;
+    outline: none;
+    vertical-align: top;
+    width: 395px;
+    height: 23px;
+}
+
+#header-search fieldset button {
+    width: 49px;
+    height: 49px;
+    border: none;
+    padding: 0;
+    background: #03cf5d;
+    position: absolute; /*절대적인 자리 위치, 전체적인 화면을 기준으로 움직임*/
+    right: -2px;
+    top: -2px;
+}
+
+#search-keyboard{
+    background-image: url(./sp_search.png);
+    background-repeat: no-repeat;
+    background-position: -33px -60px;
+    width: 19px;
+    height: 11px;
+    display: inline-block;
+    margin: 0 6px; /*상하, 좌우 같으면 2개로 줄여 씀*/
+    vertical-align: middle;
+}
+
+#search-history{ 
+    background-image: url(./sp_search.png);
+    background-repeat: no-repeat;
+    background-position: -87px -60px;
+    width: 9px;
+    height: 4px;
+    display: inline-block;
+    margin: 0 6px;
+    vertical-align: middle;
+}
+
+#search-image {
+    background-image: url(./sp_search.png);
+    background-position: -3px -60px;
+    background-repeat: no-repeat;
+    width: 21px;
+    height: 21px;
+    display: inline-block;
+    margin: 14px;
+}
+
+nav{
+    height: 46px;
+    border-top: 1px solid #f1f3f6; /*솔리드는 직선*/
+    border-bottom: 1px solid #d1d8e4;
+}
+
+nav ul{
+    display: inline-block;
+    margin: 0;
+    padding: 16px 0 0 4px;
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav li:first-child span:first-child {
+    width: 25px;
+    background-position: 0 -285px;
+    margin-left: 0; /*나머지 다 margin 있는데 얘만 없으면 그냥 0으로 덮어씌우기*/
+}
+
+nav li span:first-child{
+    height: 16px;
+    display: inline-block;
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2019/sp_nav.png);
+    background-repeat: no-repeat;
+    margin-left: 10px;
+}
+
+nav li:nth-child(2) span:first-child {
+    width: 27px;
+    background-position: -279px -52px;
+}
+
+nav li:nth-child(3) span:first-child {
+    width: 40px;
+    background-position: -100px -182px;
+}
+
+nav li:nth-child(4) span:first-child {
+    width: 40px;
+    background-position: -101px -156px;
+}
+
+nav li:nth-child(5) span:first-child {
+    width: 26px;
+    background-position: -279px -156px;
+}
+
+nav li:nth-child(6) span:first-child {
+    width: 25px;
+    background-position: -70px -285px;
+}
+
+nav li:nth-child(7) span:first-child {
+    width: 35px;
+    background-position: -125px -130px;
+}
+
+nav li:nth-child(8) span:first-child {
+    width: 26px;
+    background-position: -279px -208px;
+}
+
+nav li:nth-child(9) span:first-child {
+    width: 26px;
+    background-position: -128px -104px;
+}
+
+nav li:nth-child(10) span:first-child {
+    width: 26px;
+    background-position: -36px -259px;
+}
+
+nav li:nth-child(11) span:first-child {
+    width: 39px;
+    background-position: -151px -156px;
+}
+
+nav li:nth-child(12) span:first-child {
+    width: 26px;
+    background-position: -279px -130px;
+}
+
+nav li:nth-child(13) span:first-child {
+    width: 26px;
+    background-position: -234px -233px;
+}
+
+nav li:nth-child(14) span:first-child {
+    width: 26px;
+    background-position: -72px -259px;
+}
+
+nav li:nth-child(15) span:first-child {
+    width: 13px;
+    background-position: -140px -78px;
+}
+
+nav li:nth-child(16) span:first-child {
+    width: 26px;
+    background-position: -279px 0;
+}
+
+nav li.more:first-child span:first-child {
+    width: 55px;
+    background-position: 0 -104px;
+}
+
+.nav-divider{
+    display: inline-block;
+    margin: 18px 16px 0;
+    width: 1px;
+    height: 14px;
+    background: #ebeef3;
+}
+
+#search-ranking {
+    position: absolute;
+    top: 16px;
+    right: 100px;
+}
+
+#rank-number {
+    margin-top: -9px;
+    color: #00ab33;
+    font-size: 16px;
+}
+
+#rank-title {
+    letter-spacing: -1px;
+    font-size: 14px;
+}
+
+main {
+    background-color: #f2f4f7;
+}
