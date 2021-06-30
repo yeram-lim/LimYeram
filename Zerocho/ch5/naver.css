@@ -1,0 +1,159 @@
+*{ /*모든 태그를 지칭한다. 모든 태그의 박스는 보더 박스로 하는 것, 박스를 border 기준으로 해서 너비 잰다.*/
+    box-sizing: border-box;
+}
+
+html, body{ /* 얘네는 기본적으로 공백 없애고 시작*/
+    margin: 0;
+    padding: 0;
+}
+
+#fixed{
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    border-radius: 50px; /*둥글게 둥글게*/
+}
+/*css는 조장, 부모의 css태그를 덮어쓴다.*/
+/* 선택자(selector) */
+
+.blind { /* 점은 클래스, 클래스는 같은 이름 사용 가능 */
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+
+.center-align { /* html의 id 불러올 때 #을 사용하기, div는 하도 많이 사용해서 #앞의 div만 생략 가능*/
+    margin: 0 auto;
+    width: 1080px;
+}
+
+#header-search a {
+    text-decoration: none;
+}
+
+div#header-search h1 {/* 자식 선택할 때 > 꺽새 사용 */
+    width: 198px;
+    height: 48px;
+    display: inline-block; /*경계를 줄여준다. 블록 크기 지정 가능*/
+    /*background-image: url(./sp_search.png); 배경화면 가져오기*/
+    /*background-position: -4px -10px; -왼쪽과 아래쪽*/
+    /*background-repeat: no-repeat; 배경화면을 반복x*/
+    background: url(./sp_search.png) -4px -4px no-repeat;
+    vertical-align: middle;
+    position: relative;/*다른애들 안 건들이고 내 원래 위치에서 상대적인 움직임 조정*/
+    top: -6px;
+} 
+
+#header-search h1 span{
+    display: none;
+}
+
+/*div#header-center h1{  
+    자손(손자,손자의 자식 등등 모두) 선택할 때 그냥 띄어쓰기 사용
+} 
+*/
+
+#header-search h2 { /* 시각장애인들을 위해 표시는 하지만 화면에는 안 보이게 만들기 */
+    display: none; /* 일반사람 눈에는 안보이고 검색 엔진이 읽는다 */
+}
+
+#header-search fieldset {
+    margin-left: 20px;
+    /*padding-top: 12px;
+    padding-bottom: 12px;    
+    padding-left: 10px;
+    padding-right: 10px;*/
+    padding: 12px 0 12px 10px; /*위 오 아 왼, 시계방향*/
+    width: 521px;
+    height: 49px;
+    display: inline-block;
+    border: 2px solid #03cf5d; /*hex color, 구글에서 찾아 쓰면 됨*/
+    vertical-align: middle; /*정렬하기*/
+    position: relative; /*상대적 자리로 바꿔서 검색버튼(절대적 위치)이 여기에 붙도록 한다.*/
+}
+
+#header-search fieldset input {
+    border: none;
+    padding: 0;
+    outline: none;
+    vertical-align: top;
+    width: 405px;
+    height: 23px;
+}
+
+#header-search fieldset button {
+    width: 49px;
+    height: 49px;
+    border: none;
+    padding: 0;
+    background: #03cf5d;
+    position: absolute; /*절대적인 자리 위치, 전체적인 화면을 기준으로 움직임*/
+    right: -2px;
+    top: -2px;
+}
+
+#search-image {
+    background-image: url(./sp_search.png);
+    background-position: -4px -60px;
+    background-repeat: none;
+    width: 21px;
+    height: 21px;
+    display: inline-block;
+    margin: 14px;
+}
+
+nav ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav li span:first-child{
+    height: 16px;
+    display: inline-block;
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2019/sp_nav.png);
+    background-repeat: no-repeat;
+    margin-left: 14px;
+}
+
+nav li:first-child span:first-child {
+    width: 25px;
+    background-position: 0 -285px;
+    margin-left: 0; /*나머지 다 margin 있는데 얘만 없으면 그냥 0으로 덮어씌우기*/
+}
+
+nav li:nth-child(2) span:first-child {
+    width: 27px;
+    background-position: -279px -52px;
+}
+
+nav li:nth-child(3) span:first-child {
+    width: 40px;
+    background-position: -100px -182px;
+}
+
+nav li:nth-child(4) span:first-child {
+    width: 40px;
+    background-position: -101px -156px;
+}
+
+nav li:nth-child(5) span:first-child {
+    width: 26px;
+    background-position: -279px -156px;
+}
+
+nav li:nth-child(6) span:first-child {
+    width: 25px;
+    background-position: -70px -285px;
+}
