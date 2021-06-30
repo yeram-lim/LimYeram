@@ -8,34 +8,28 @@
 </head>
 <body>
     <header><!--div는 별다른 기능은 없고 구역 나눔, header는 div의 일종, 가로줄 모두 차지-->
-        <div style="background-color: yellow;">
-            <div style="float: right; background-color: green; height: 200px;">둥둥</div> <!--float은 그만큼 자리를 차지한다. 글자들이 다 피해간다.-->
-            <div>가나다</div>
-        </div>
         <div class="center-align"><!--가운데 정렬용 div, 가운데 정렬은 css 쓸거얌! 그리고 너비를 1080으로-->
             <!--css 문법: 속성명: 값;-->
-            <!--인라인 스타일:css를 html 문서에 넣는 것-->
-            <div><!--div를 사용해 가로로 계속 쪼갬-->
-                <span>네이버를 시작 페이지로</span> <!--span은 inline과 비슷한데 내용글자수 만큼 블록을 만듦-->
-                <span>쥬니어 네이버</span>
+            <!--인라인 스타일: css를 html 문서에 넣는 것-->
+            <div id="header-top"><!--div를 사용해 가로로 계속 쪼갬-->
+                <span>네이버를 시작 페이지로 > | </span> <!--span은 inline과 비슷한데 내용글자수 만큼 블록을 만듦-->
+                <span>쥬니어 네이버 | </span>
                 <span>해피빈</span>
             </div>
             <div id="header-search">
                 <a href="https://www.naver.com">
                     <h1>
                         <span>네이버</span>
-                        <!-- 주석(comment)입니다 -->
-                        <!-- 속성(attribute)입니다 -->
                     </h1>
                 </a> <!--a 태그는 홈페이지를 옮겨가게 하는 것 -->
                 <h2 class="blind">검색창</h2>
                 <fieldset>
                     <legend class="blind">검색</legend>
                     <input /> <!--입력창-->
-                    <button>
+                    <button><!--******클릭이 되는 버튼********-->
                         <span class="blind">검색</span>
                         <span id="search-image"></span> <!--검색용 이미지-->
-                    </button> <!--******클릭이 되는 버튼********-->
+                    </button> 
                 </fieldset>
             </div>
         </div>
@@ -63,9 +57,9 @@
         <h2>실시간 검색어</h2>
         <h3>연합뉴스</h3>
         <ol>
-            <li>충격) 제로초</li>
-            <li>속보) 제로초</li>
-            <li>하이루</li>
+            <li>Pirogramming 1일차 수업 github 만들기에 모두 진땀빼</li>
+            <li>Pirogramming 1일차 과제 양에 기겁해</li>
+            <li>하지만 다 해낼거다</li>
         </ol>
         <h3>언론사 목록</h3>
         <ul>

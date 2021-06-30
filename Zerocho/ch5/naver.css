@@ -34,6 +34,20 @@ html, body{ /* 얘네는 기본적으로 공백 없애고 시작*/
     width: 1080px;
 }
 
+#header-top{
+    float: right; /*오른쪽으로 보내는데 그 만큼 자리를 차지한다. 둥둥둥*/
+}
+
+#header-top {
+    color: #404040;
+    letter-spacing: -1px; /*글자 사이 간격*/
+    font-size: 11px;
+    line-height: 22px; /*글자 차지할 높이. 폰트랑 다름. 줄바꿈이랑 비슷*/
+}
+
+#header-search {
+    clear: both; /*float와 안 겹치게 만들어준다.*/
+}
 #header-search a {
     text-decoration: none;
 }
