@@ -22,7 +22,7 @@ h1, h2, h3, h4, h5, h6{
 
 #fixed{
     position: fixed;
-    top: 50px;
+    bottom: 50px;
     right: 50px;
     display: inline-block;
     width: 100px;
@@ -35,11 +35,11 @@ h1, h2, h3, h4, h5, h6{
 /* 선택자(selector) */
 .blind { /* 점은 클래스, 클래스는 같은 이름 사용 가능 */
     position: absolute;
+    overflow: hidden;
     clip: rect(0 0 0 0);
+    margin: -1px;
     width: 1px;
     height: 1px;
-    margin: -1px;
-    overflow: hidden;
 }
 
 .relative {
@@ -69,13 +69,14 @@ header {
 
 #header-search {
     clear: both; /*float와 안 겹치게 만들어준다.*/
-    padding-top: 12px;
+    padding-top: 45px;
 }
+
 #header-search a {
     text-decoration: none;
 }
 
-div#header-search h1 {/* 자식 선택할 때 > 꺽새 사용 */
+#header-search h1 {/* 자식 선택할 때 > 꺽새 사용 */
     width: 198px;
     height: 48px;
     display: inline-block; /*경계를 줄여준다. 블록 크기 지정 가능*/
@@ -93,17 +94,12 @@ div#header-search h1 {/* 자식 선택할 때 > 꺽새 사용 */
     display: none;
 }
 
-/*div#header-center h1{  
-    자손(손자,손자의 자식 등등 모두) 선택할 때 그냥 띄어쓰기 사용
-} 
-*/
-
 #header-search h2 { /* 시각장애인들을 위해 표시는 하지만 화면에는 안 보이게 만들기 */
     display: none; /* 일반사람 눈에는 안보이고 검색 엔진이 읽는다 */
 }
 
 #header-search fieldset {
-    margin-left: 20px;
+    margin-left: 18px;
     /*padding-top: 12px;
     padding-bottom: 12px;    
     padding-left: 10px;
@@ -192,7 +188,7 @@ nav ul{
     margin-left: 0; /*나머지 다 margin 있는데 얘만 없으면 그냥 0으로 덮어씌우기*/
 }
 
-#nav-menu li span:first-child{
+#nav-menu li span:first-child {
     height: 16px;
     display: inline-block;
     background-image: url(https://s.pstatic.net/static/www/img/uit/2019/sp_nav.png);
@@ -245,7 +241,7 @@ nav ul{
     background-position: -36px -259px;
 }
 
-n#nav-menu li:nth-child(11) span:first-child {
+#nav-menu li:nth-child(11) span:first-child {
     width: 39px;
     background-position: -151px -156px;
 }
@@ -303,9 +299,8 @@ n#nav-menu li:nth-child(16) span:first-child {
     margin: 0;
     width: 332px;
     height: 334px;
-    border: 1px solid black;
-    background-color: white;
-    position: absolute;
+    border: 1px solid #aaa;
+    background: white;
     top: -15px;
     right: 0;
     z-index: 100; /*먼저 부모끼리 index 비교한다. 숫자 크면 이긴다. 창이 앞에 나옴*/
@@ -327,7 +322,7 @@ n#nav-menu li:nth-child(16) span:first-child {
     z-index: 1000; /*자식은 자기 부모 index가 작으면 숫자 아무리 커도 본인 부모보다 큰 부모 못 이긴다.*/
 }
 
-#search-ranking:hover ul {
+#search-ranking:hover ul { /*마우스 갖다대면 나오게 한다*/
     display: inline-block;
 }
 
@@ -345,7 +340,7 @@ n#nav-menu li:nth-child(16) span:first-child {
 main {
     background-color: #f2f4f7;
     display: inline-block;
-    width: 100%
+    width: 100%;
 }
 
 #main-centered {
@@ -375,6 +370,40 @@ main {
     vertical-align: top; /*위로 끌어올려 맞춤*/
     background-color: white;
     margin-bottom: 8px;
+}
+
+#main-login .login-wrapper {
+    padding: 15px 25px;
+}
+
+#main-login .login-wrapper a {
+    display: block;
+}
+
+#main-login .login-text {
+    color: #888;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+#main-login .login-image {
+    margin-top: 12px;
+    background: url(./sp_login.png) 0 -47px no-repeat;
+    display: inline-block;
+    width: 280px;
+    height:37px;
+}
+
+#main-login .login-signup {
+    float: right;
+    font-size: 12px;
+    line-height: 38px;
+    color: #666;
+    text-decoration: none; /*밑줄 사라진다*/
+}
+
+#main-login .login-signup:hover{
+    text-decoration: underline;
 }
 
 #main-second-block {
@@ -432,7 +461,7 @@ main {
     width: calc(100% / 6); /*나누기 해주는 함수, 띄어쓰기 꼭 해야한다.*/
     height: 67px;
     border-right: 1px solid #f1f3f6;
-    border-right: 1px solid #f1f3f6;
+    border-bottom: 1px solid #f1f3f6;
     text-align: center; /*내부 컨텐츠 가로 가운데 정렬, 부모가 함*/
 }    
 
@@ -443,7 +472,6 @@ main {
 }
 
 #main-weather{
-    float: left;
     display: inline-block;
     width: 330px;
     height: 142px;
@@ -452,29 +480,25 @@ main {
     vertical-align: top;
 }
 
-#main-second-ad{
-    float: left;
+#main-second-ad {
     display: inline-block;
-    width: 330px;
+    width: 332px;
     height: 150px;
     background: #555;
     vertical-align: top;
 }
 
-#main-category{
+#main-category {
     float: left;
-    display: inline-block;
     width: 740px;
     height: 882px;
     background: white;
     margin-bottom: 8px;
     margin-right: 8px;
-    vertical-align: top;
 }
 
 #main-shopping {
     float: left;
-    display: inline-block;
     width: 330px;
     height: 882px;
     background: white;
@@ -495,7 +519,7 @@ main {
 
 #main-event {
     float: left;
-    display: inline-block;
+    
     width: 740px;
     height: 130px;
     background: white;
@@ -504,8 +528,7 @@ main {
 }
 
 #main-third-ad{
-    display: inline-block;
-    width: 332px;
+    width: 330px;
     height: 130px;
     background: #555;
 }

@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="./naver.css"> <!--css 파일 있다는 것 알려주기-->
 </head>
 <body>
-
     <header><!--div는 별다른 기능은 없고 구역 나눔, header는 div의 일종, 가로줄 모두 차지-->
         <div class="center-align"><!--가운데 정렬용 div, 가운데 정렬은 css 쓸거얌! 그리고 너비를 1080으로-->
             <!--css 문법: 속성명: 값;-->
@@ -24,16 +23,18 @@
                     </h1>
                 </a> <!--a 태그는 홈페이지를 옮겨가게 하는 것 -->
                 <h2 class="blind">검색창</h2>
-                <fieldset>
-                    <legend class="blind">검색</legend>
-                    <input /> <!--입력창-->
-                    <span id="search-keyboard"></span>
-                    <span id="search-history"></span>
-                    <button><!--******클릭이 되는 버튼********-->
-                        <span class="blind">검색</span>
-                        <span id="search-image"></span> <!--검색용 이미지-->
-                    </button> 
-                </fieldset>
+                <form class="inline-block" action="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=">
+                    <fieldset> <!--사용자가 입력한 내용의 페이지로 가려면 form 사용한다-->
+                        <legend class="blind">검색</legend>
+                        <input /> <!--입력창-->
+                        <span id="search-keyboard"></span>
+                        <span id="search-history"></span>
+                        <button type="submit"><!--******클릭이 되는 버튼********-->
+                            <span class="blind">검색</span>
+                            <span id="search-image"></span> <!--검색용 이미지-->
+                        </button> 
+                    </fieldset>
+                </form>
             </div>
         </div>
     </header>
@@ -87,9 +88,6 @@
                         <span class="rank-title">제로초</span>
                     </li>
                 </ul>
-                <div id="z-example">
-                    <div id="z-inner"></div>
-                </div>
             </div>
             <ul id="nav-menu"> <!--unordered list/ ol은 ordered list로 번호가 붙는다-->
                 <li>
@@ -117,7 +115,6 @@
             <div class="nav-divider"></div> <!--구분선-->
             <ul>
                 <li class="more"><a href=""><span></span><span class="blind">더보기</span></a></li>
-                <li><a href=""><span></span><span class="blind">더보기</span></a></li>
             </ul>
         </div>
     </nav>
@@ -126,7 +123,18 @@
             <div id="main-first-block">
                 <div id="main-ad"></div>
                 <div id="main-login">
-                    <h3>로그인</h3>
+                    <h3 class="blind">로그인</h3>
+                    <div class="login-wrapper">
+                        <span class="login-text">네이버를 더 안전하고 편리하게 이용하세요.</span>
+                        <a href="https://nid.naver.com/nidlogin.login?mode=qrcode">
+                            <span calss="blind">NAVER 로그인</span>
+                            <span class="login-image"></span>
+                        </a>
+                        <a 
+                        class="login-signup"
+                        href="https://nid.naver.com/user2/V2Join?m=agree&lang=ko_KR&cpno="
+                        >회원가입</a>
+                    </div>
                 </div>
             </div>
             <div id="main-second-block">
@@ -161,10 +169,10 @@
                         </ul>
                     </div>
                 </div>
-            </div>
-            <div class="float-left">
-                <div id="main-weather"></div>
-                <div id="main-second-ad"></div>
+                <div class="float-left">
+                    <div id="main-weather"></div>
+                    <div id="main-second-ad"></div>
+                </div>
             </div>
             <div id="main-third-block">
                 <div id="main-category">
@@ -184,13 +192,8 @@
                 </div>
                 <div id="main-third-ad"></div>
             </div>
-        <div>
-            <h3>뉴스</h3>
-            <h3>법률</h3>
-            <h3>쇼핑</h3>
-            <h6>쇼핑</h6>
         </div>
-    </main>
+    </main>  
     <footer>
         <div id = "footer">공지사항</div>
         <div>creaters</div>
