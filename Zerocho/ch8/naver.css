@@ -1,21 +1,3 @@
-*{ /*모든 태그를 지칭한다. 모든 태그의 박스는 보더 박스로 하는 것, 박스를 border 기준으로 해서 너비 잰다.*/
-    box-sizing: border-box;
-}
-
-html, body{ /* 얘네는 기본적으로 쓸데없는 공백 없애고 시작*/
-    margin: 0;
-    padding: 0;
-    font-family: Dotum, '돋움', Helvetica, "Apple SD Gothic Neo", sans-serif; /*글씨체 컴퓨터에 존재하는 순서대로 넣어줌*/
-}
-
-h1, h2, h3, h4, h5, h6{ 
-    margin: 0;    
-}
-
-.inline-block {
-    display: inline-block;
-}
-
 #fixed{
     position: fixed;
     top: 50px;
@@ -71,7 +53,7 @@ header {
     text-decoration: none;
 }
 
-div#header-search h1 {/* 자식 선택할 때 > 꺽새 사용 */
+#header-search h1 {/* 자식 선택할 때 > 꺽새 사용 */
     width: 198px;
     height: 48px;
     display: inline-block; /*경계를 줄여준다. 블록 크기 지정 가능*/
@@ -89,17 +71,12 @@ div#header-search h1 {/* 자식 선택할 때 > 꺽새 사용 */
     display: none;
 }
 
-/*div#header-center h1{  
-    자손(손자,손자의 자식 등등 모두) 선택할 때 그냥 띄어쓰기 사용
-} 
-*/
-
 #header-search h2 { /* 시각장애인들을 위해 표시는 하지만 화면에는 안 보이게 만들기 */
     display: none; /* 일반사람 눈에는 안보이고 검색 엔진이 읽는다 */
 }
 
 #header-search fieldset {
-    margin-left: 20px;
+    margin-left: 18px;
     /*padding-top: 12px;
     padding-bottom: 12px;    
     padding-left: 10px;
@@ -182,13 +159,13 @@ nav li {
     display: inline-block;
 }
 
-nav li:first-child span:first-child {
+nav-menu li:first-child span:first-child {
     width: 25px;
     background-position: 0 -285px;
     margin-left: 0; /*나머지 다 margin 있는데 얘만 없으면 그냥 0으로 덮어씌우기*/
 }
 
-nav li span:first-child{
+nav-menu li span:first-child{
     height: 16px;
     display: inline-block;
     background-image: url(https://s.pstatic.net/static/www/img/uit/2019/sp_nav.png);
@@ -196,82 +173,82 @@ nav li span:first-child{
     margin-left: 10px;
 }
 
-nav li:nth-child(2) span:first-child {
+nav-menu li:nth-child(2) span:first-child {
     width: 27px;
     background-position: -279px -52px;
 }
 
-nav li:nth-child(3) span:first-child {
+nav-menu li:nth-child(3) span:first-child {
     width: 40px;
     background-position: -100px -182px;
 }
 
-nav li:nth-child(4) span:first-child {
+nav-menu li:nth-child(4) span:first-child {
     width: 40px;
     background-position: -101px -156px;
 }
 
-nav li:nth-child(5) span:first-child {
+nav-menu li:nth-child(5) span:first-child {
     width: 26px;
     background-position: -279px -156px;
 }
 
-nav li:nth-child(6) span:first-child {
+nav-menu li:nth-child(6) span:first-child {
     width: 25px;
     background-position: -70px -285px;
 }
 
-nav li:nth-child(7) span:first-child {
+nav-menu li:nth-child(7) span:first-child {
     width: 35px;
     background-position: -125px -130px;
 }
 
-nav li:nth-child(8) span:first-child {
+nav-menu li:nth-child(8) span:first-child {
     width: 26px;
     background-position: -279px -208px;
 }
 
-nav li:nth-child(9) span:first-child {
+nav-menu li:nth-child(9) span:first-child {
     width: 26px;
     background-position: -128px -104px;
 }
 
-nav li:nth-child(10) span:first-child {
+nav-menu li:nth-child(10) span:first-child {
     width: 26px;
     background-position: -36px -259px;
 }
 
-nav li:nth-child(11) span:first-child {
+nav-menu li:nth-child(11) span:first-child {
     width: 39px;
     background-position: -151px -156px;
 }
 
-nav li:nth-child(12) span:first-child {
+nav-menu li:nth-child(12) span:first-child {
     width: 26px;
     background-position: -279px -130px;
 }
 
-nav li:nth-child(13) span:first-child {
+nav-menu li:nth-child(13) span:first-child {
     width: 26px;
     background-position: -234px -233px;
 }
 
-nav li:nth-child(14) span:first-child {
+nav-menu li:nth-child(14) span:first-child {
     width: 26px;
     background-position: -72px -259px;
 }
 
-nav li:nth-child(15) span:first-child {
+nav-menu li:nth-child(15) span:first-child {
     width: 13px;
     background-position: -140px -78px;
 }
 
-nav li:nth-child(16) span:first-child {
+nav-menu li:nth-child(16) span:first-child {
     width: 26px;
     background-position: -279px 0;
 }
 
-nav li.more:first-child span:first-child {
+nav-menu li.more:first-child span:first-child {
     width: 55px;
     background-position: 0 -104px;
 }
@@ -286,8 +263,45 @@ nav li.more:first-child span:first-child {
 
 #search-ranking {
     position: absolute;
-    top: 16px;
-    right: 100px;
+    top: 14px;
+    right: 0;
+    width: 198px;
+    height: 20px;
+}
+
+#search-ranking ul {
+    display: none;
+    list-style: none;
+    padding: 17px;
+    margin: 0;
+    width: 332px;
+    height: 334px;
+    border: 1px solid #aaa;
+    background: white;
+    position: absolute;
+    top: -15px;
+    right: 0;
+    z-index: 100;
+}
+
+#z-example {
+    position: absolute;
+    background: yellow;
+    width: 100px;
+    height: 100px;
+    z-index: 1;
+}
+
+#z-inner {
+    position: absolute;
+    background: red;
+    width: 50px;
+    height: 50px;
+    z-index: 1000;
+}
+
+#search-ranking:hover ul {
+    display: inline-block;
 }
 
 #rank-number {
@@ -313,13 +327,13 @@ main {
 }
 
 #main-first-block {
-    padding: 8px 10px 0; /*좌우 같음*/
-    width: 1100px;
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
 }
 
 #main-ad {
     float: left;
-    display: inline-block;
     width: 740px;
     height: 120px;
     background: #555;
@@ -329,7 +343,6 @@ main {
 
 #main-login{
     float: left;
-    display: inline-block;
     width: 332px;
     height: 120px;
     vertical-align: top; /*위로 끌어올려 맞춤*/
@@ -387,6 +400,14 @@ main {
     vertical-align: top;
 }
 
+#main-ytn h3, #main-newsstand h3 {
+    font-size: 14px;
+    font-family: NanumSquare,Dotum,"돋움",Helvetica,AppleSDGothicNeo,sans-serif;
+    padding-top: 15px;
+    padding-left: 15px;
+    vertical-align: top;
+}
+
 #main-ytn{
     display: inline-block;
     width: 740px;
@@ -436,7 +457,6 @@ main {
     transform: translateY(-50%);
 }
 
-
 #main-weather{
     display: inline-block;
     width: 332px;
@@ -451,7 +471,6 @@ main {
     width: 332px;
     height: 150px;
     background: #555;
-    margin-bottom: 8px;
     vertical-align: top;
 }
 
@@ -459,7 +478,7 @@ main {
     float: left;
     display: inline-block;
     width: 740px;
-    height: 837px;
+    height: 884px;
     background: white;
     margin-bottom: 8px;
     margin-right: 8px;
@@ -467,22 +486,30 @@ main {
 
 #main-shopping {
     float: left;
-    display: inline-block;
     width: 332px;
-    height: 837px;
+    height: 884px;
     background: white;
     margin-bottom: 8px;
+}
+
+#main-shopping iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 #main-third-block,
 #main-fourth-block{
     display: inline-block;
     width: 100%;
+    vertical-align: top;
 }
 
 #main-event {
     float: left;
-    display: inline-block;
     width: 740px;
     height: 130px;
     background: white;
@@ -604,4 +631,8 @@ main {
     background-image: url(./sp_themecast.png);
     background-repeat: no-repeat;
     background-position: -320px 52px;
+}
+
+section {
+    border: 1px solid #dee3eb;
 }
