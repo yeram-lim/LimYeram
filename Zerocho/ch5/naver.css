@@ -5,6 +5,7 @@
 html, body{ /* 얘네는 기본적으로 공백 없애고 시작*/
     margin: 0;
     padding: 0;
+    font-family: Dotum, '돋움', Helvetica, "Apple SD Gothic Neo", sans-serif; /*글씨체 컴퓨터에 존재하는 순서대로 넣어줌*/
 }
 
 #fixed{
@@ -34,8 +35,13 @@ html, body{ /* 얘네는 기본적으로 공백 없애고 시작*/
     width: 1080px;
 }
 
+header {
+    height: 170px;
+}
+
 #header-top{
     float: right; /*오른쪽으로 보내는데 그 만큼 자리를 차지한다. 둥둥둥*/
+    margin-top: 8px;
 }
 
 #header-top {
@@ -62,7 +68,8 @@ div#header-search h1 {/* 자식 선택할 때 > 꺽새 사용 */
     background: url(./sp_search.png) -4px -4px no-repeat;
     vertical-align: middle;
     position: relative;/*다른애들 안 건들이고 내 원래 위치에서 상대적인 움직임 조정*/
-    top: -6px;
+    top: -5px;
+    left: 1px;
 } 
 
 #header-search h1 span{
@@ -98,7 +105,7 @@ div#header-search h1 {/* 자식 선택할 때 > 꺽새 사용 */
     padding: 0;
     outline: none;
     vertical-align: top;
-    width: 405px;
+    width: 395px;
     height: 23px;
 }
 
@@ -113,19 +120,49 @@ div#header-search h1 {/* 자식 선택할 때 > 꺽새 사용 */
     top: -2px;
 }
 
+#search-keyboard{
+    background-image: url(./sp_search.png);
+    background-repeat: no-repeat;
+    background-position: -33px -60px;
+    width: 19px;
+    height: 11px;
+    display: inline-block;
+    margin: 0 10px; /*상하, 좌우 같으면 2개로 줄여 씀*/
+    vertical-align: middle;
+}
+
+#search-history{ 
+    background-image: url(./sp_search.png);
+    background-repeat: no-repeat;
+    background-position: -87px -60px;
+    width: 9px;
+    height: 4px;
+    display: inline-block;
+    margin: 0;
+    vertical-align: middle;
+}
+
 #search-image {
     background-image: url(./sp_search.png);
     background-position: -4px -60px;
-    background-repeat: none;
+    background-repeat: no-repeat;
     width: 21px;
     height: 21px;
     display: inline-block;
-    margin: 14px;
+    margin: 10px;
+}
+
+nav{
+    height: 46px;
+    border-top: 1px solid #f1f3f6; /*솔리드는 직선*/
+    border-bottom: 1px solid #d1d8e4;
+    position: relative;
 }
 
 nav ul{
+    display: inline-block;
     margin: 0;
-    padding: 0;
+    padding: 16px 0 0 4px;
     list-style: none;
 }
 
@@ -170,4 +207,29 @@ nav li:nth-child(5) span:first-child {
 nav li:nth-child(6) span:first-child {
     width: 25px;
     background-position: -70px -285px;
+}
+
+nav li:nth-child(7) span:first-child {
+    width: 36px;
+    background-position: -125px -130px;
+}
+
+.nav-divider{
+    display: inline-block;
+    margin: 18px 16px 0;
+    width: 1px;
+    height: 14px;
+    background: #ebeef3;
+}
+
+#search-ranking {
+    position: absolute;
+    top: 16px;
+    right: 240px;
+}
+
+#rank-number {
+    margin-top: -9px;
+    color: #00ab33;
+    font-size: 16px;
 }

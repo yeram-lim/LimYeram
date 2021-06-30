@@ -26,6 +26,8 @@
                 <fieldset>
                     <legend class="blind">검색</legend>
                     <input /> <!--입력창-->
+                    <span id="search-keyboard"></span>
+                    <span id="search-history"></span>
                     <button><!--******클릭이 되는 버튼********-->
                         <span class="blind">검색</span>
                         <span id="search-image"></span> <!--검색용 이미지-->
@@ -35,42 +37,60 @@
         </div>
     </header>
     <nav><!--얘도 div 일종으로 div는 이름을 짓는 것이 좋다.-->
-        <div class="center-align">
+        <div class="center-align relative">
+            <div id="search-ranking">
+                <h2 class="blind">실시간 검색어</h2>
+                <sapn id="rank-number">1</sapn>
+                <span>제로초</span>
+            </div>
             <ul> <!--unordered list/ ol은 ordered list로 번호가 붙는다-->
                 <li>
                     <a href="">
-                        <span></span>
+                        <span class="nav_item_mail"></span>
                         <span class="blind">메일</span>
                     </a>
                 </li><!--list item-->
                 <li><a href=""><span></span><span class="blind">카페</span></a></li>
                 <li><a href=""><span></span><span class="blind">블로그</span></a></li>
                 <li><a href=""><span></span><span class="blind">지식인</span></a></li>
-                <li><a href=""><span></span><span class="blind">쇼핑</span></a></li>
-                <li><a href=""><span></span><span class="blind">네이버 페이</span></a></li>
                 <li><a href=""><span></span><span class="blind">네이버 쇼핑</span></a></li>
+                <li><a href=""><span></span><span class="blind">네이버 페이</span></a></li>
+                <li><a href=""><span></span><span class="blind">네이버TV</span></a></li>
+                <li><a href=""><span></span><span class="blind">사전</span></a></li>
+                <li><a href=""><span></span><span class="blind">뉴스</span></a></li>
+                <li><a href=""><span></span><span class="blind">증권</span></a></li>
+                <li><a href=""><span></span><span class="blind">부동산</span></a></li>
+                <li><a href=""><span></span><span class="blind">지도</span></a></li>
+                <li><a href=""><span></span><span class="blind">영화</span></a></li>
+                <li><a href=""><span></span><span class="blind">뮤직</span></a></li>
+                <li><a href=""><span></span><span class="blind">책</span></a></li>
+                <li><a href=""><span></span><span class="blind">웹툰</span></a></li>
+            </ul>
+            <div class="nav-divider"></div> <!--구분선-->
+            <ul>
+                <li><a href=""><span></span><span class="blind">더보기</span></a></li>
             </ul>
         </div>
-
     </nav>
     <main>
-        <h2>실시간 검색어</h2>
-        <h3>연합뉴스</h3>
-        <ol>
-            <li>Pirogramming 1일차 수업 github 만들기에 모두 진땀빼</li>
-            <li>Pirogramming 1일차 과제 양에 기겁해</li>
-            <li>하지만 다 해낼거다</li>
-        </ol>
-        <h3>언론사 목록</h3>
-        <ul>
-            <li><img src="./MBN.png" alt="MBN" /></li><!--이미지에는 설명을 달자-->
-            <li><img src="./NEWSIS.png" alt="NEWSIS" /></li>
-        </ul>
-        <h3>로그인</h3>
-        <h3>뉴스</h3>
-        <h3>법률</h3>
-        <h3>쇼핑</h3>
-        <h6>쇼핑</h6>
+        <div class="center-align">
+            <h3>연합뉴스</h3>
+            <ol>
+                <li>Pirogramming 1일차 수업 github 만들기에 모두 진땀빼</li>
+                <li>Pirogramming 1일차 과제 양에 기겁해</li>
+                <li>하지만 다 해낼거다</li>
+            </ol>
+            <h3>언론사 목록</h3>
+            <ul>
+                <li><img src="./MBN.png" alt="MBN" /></li><!--이미지에는 설명을 달자-->
+                <li><img src="./NEWSIS.png" alt="NEWSIS" /></li>
+            </ul>
+            <h3>로그인</h3>
+            <h3>뉴스</h3>
+            <h3>법률</h3>
+            <h3>쇼핑</h3>
+            <h6>쇼핑</h6>
+        </div>
     </main>
     <footer>
         <div id = "footer">공지사항</div>
