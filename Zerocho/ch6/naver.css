@@ -308,6 +308,23 @@ n#nav-menu li:nth-child(16) span:first-child {
     position: absolute;
     top: -15px;
     right: 0;
+    z-index: 100; /*먼저 부모끼리 index 비교한다. 숫자 크면 이긴다. 창이 앞에 나옴*/
+}
+
+#z-example {
+    position: absolute;
+    background: yellow;
+    width: 100px;
+    height: 100px;
+    z-index: 1;
+}
+
+#z-inner {
+    position: absolute;
+    background: red;
+    width: 50px;
+    height: 50px;
+    z-index: 1000; /*자식은 자기 부모 index가 작으면 숫자 아무리 커도 본인 부모보다 큰 부모 못 이긴다.*/
 }
 
 #search-ranking:hover ul {
