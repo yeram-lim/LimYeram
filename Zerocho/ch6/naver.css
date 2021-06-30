@@ -2,12 +2,17 @@
     box-sizing: border-box;
 }
 
+<<<<<<< Updated upstream
 html, body{ /* 얘네는 기본적으로 쓸데없는 공백 없애고 시작*/
+=======
+html, body{ /* 얘네는 기본적으로 공백 없애고 시작*/
+>>>>>>> Stashed changes
     margin: 0;
     padding: 0;
     font-family: Dotum, '돋움', Helvetica, "Apple SD Gothic Neo", sans-serif; /*글씨체 컴퓨터에 존재하는 순서대로 넣어줌*/
 }
 
+<<<<<<< Updated upstream
 h1, h2, h3, h4, h5, h6{ 
     margin: 0;    
 }
@@ -23,6 +28,11 @@ h1, h2, h3, h4, h5, h6{
 #fixed{
     position: fixed;
     bottom: 50px;
+=======
+#fixed{
+    position: fixed;
+    top: 50px;
+>>>>>>> Stashed changes
     right: 50px;
     display: inline-block;
     width: 100px;
@@ -30,6 +40,7 @@ h1, h2, h3, h4, h5, h6{
     border: 1px solid black;
     border-radius: 50px; /*둥글게 둥글게*/
 }
+<<<<<<< Updated upstream
 
 /*css는 조장, 부모의 css태그를 덮어쓴다.*/
 /* 선택자(selector) */
@@ -44,6 +55,18 @@ h1, h2, h3, h4, h5, h6{
 
 .relative {
     position: relative;
+=======
+/*css는 조장, 부모의 css태그를 덮어쓴다.*/
+/* 선택자(selector) */
+
+.blind { /* 점은 클래스, 클래스는 같은 이름 사용 가능 */
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+>>>>>>> Stashed changes
 }
 
 .center-align { /* html의 id 불러올 때 #을 사용하기, div는 하도 많이 사용해서 #앞의 div만 생략 가능*/
@@ -60,7 +83,11 @@ header {
     margin-top: 8px;
 }
 
+<<<<<<< Updated upstream
 #header-top sapn {
+=======
+#header-top {
+>>>>>>> Stashed changes
     color: #404040;
     letter-spacing: -1px; /*글자 사이 간격*/
     font-size: 11px;
@@ -69,14 +96,22 @@ header {
 
 #header-search {
     clear: both; /*float와 안 겹치게 만들어준다.*/
+<<<<<<< Updated upstream
     padding-top: 45px;
 }
 
+=======
+}
+>>>>>>> Stashed changes
 #header-search a {
     text-decoration: none;
 }
 
+<<<<<<< Updated upstream
 #header-search h1 {/* 자식 선택할 때 > 꺽새 사용 */
+=======
+div#header-search h1 {/* 자식 선택할 때 > 꺽새 사용 */
+>>>>>>> Stashed changes
     width: 198px;
     height: 48px;
     display: inline-block; /*경계를 줄여준다. 블록 크기 지정 가능*/
@@ -94,12 +129,24 @@ header {
     display: none;
 }
 
+<<<<<<< Updated upstream
+=======
+/*div#header-center h1{  
+    자손(손자,손자의 자식 등등 모두) 선택할 때 그냥 띄어쓰기 사용
+} 
+*/
+
+>>>>>>> Stashed changes
 #header-search h2 { /* 시각장애인들을 위해 표시는 하지만 화면에는 안 보이게 만들기 */
     display: none; /* 일반사람 눈에는 안보이고 검색 엔진이 읽는다 */
 }
 
 #header-search fieldset {
+<<<<<<< Updated upstream
     margin-left: 18px;
+=======
+    margin-left: 20px;
+>>>>>>> Stashed changes
     /*padding-top: 12px;
     padding-bottom: 12px;    
     padding-left: 10px;
@@ -140,7 +187,11 @@ header {
     width: 19px;
     height: 11px;
     display: inline-block;
+<<<<<<< Updated upstream
     margin: 0 6px; /*상하, 좌우 같으면 2개로 줄여 씀*/
+=======
+    margin: 0 10px; /*상하, 좌우 같으면 2개로 줄여 씀*/
+>>>>>>> Stashed changes
     vertical-align: middle;
 }
 
@@ -151,24 +202,40 @@ header {
     width: 9px;
     height: 4px;
     display: inline-block;
+<<<<<<< Updated upstream
     margin: 0 6px;
+=======
+    margin: 0;
+>>>>>>> Stashed changes
     vertical-align: middle;
 }
 
 #search-image {
     background-image: url(./sp_search.png);
+<<<<<<< Updated upstream
     background-position: -3px -60px;
+=======
+    background-position: -4px -60px;
+>>>>>>> Stashed changes
     background-repeat: no-repeat;
     width: 21px;
     height: 21px;
     display: inline-block;
+<<<<<<< Updated upstream
     margin: 14px;
+=======
+    margin: 10px;
+>>>>>>> Stashed changes
 }
 
 nav{
     height: 46px;
     border-top: 1px solid #f1f3f6; /*솔리드는 직선*/
     border-bottom: 1px solid #d1d8e4;
+<<<<<<< Updated upstream
+=======
+    position: relative;
+>>>>>>> Stashed changes
 }
 
 nav ul{
@@ -178,6 +245,7 @@ nav ul{
     list-style: none;
 }
 
+<<<<<<< Updated upstream
 #nav-menu li {
     display: inline-block;
 }
@@ -189,38 +257,75 @@ nav ul{
 }
 
 #nav-menu li span:first-child {
+=======
+nav li {
+    display: inline-block;
+}
+
+nav li span:first-child{
+>>>>>>> Stashed changes
     height: 16px;
     display: inline-block;
     background-image: url(https://s.pstatic.net/static/www/img/uit/2019/sp_nav.png);
     background-repeat: no-repeat;
+<<<<<<< Updated upstream
     margin-left: 10px;
 }
 
 #nav-menu li:nth-child(2) span:first-child {
+=======
+    margin-left: 14px;
+}
+
+nav li:first-child span:first-child {
+    width: 25px;
+    background-position: 0 -285px;
+    margin-left: 0; /*나머지 다 margin 있는데 얘만 없으면 그냥 0으로 덮어씌우기*/
+}
+
+nav li:nth-child(2) span:first-child {
+>>>>>>> Stashed changes
     width: 27px;
     background-position: -279px -52px;
 }
 
+<<<<<<< Updated upstream
 #nav-menu li:nth-child(3) span:first-child {
+=======
+nav li:nth-child(3) span:first-child {
+>>>>>>> Stashed changes
     width: 40px;
     background-position: -100px -182px;
 }
 
+<<<<<<< Updated upstream
 #nav-menu li:nth-child(4) span:first-child {
+=======
+nav li:nth-child(4) span:first-child {
+>>>>>>> Stashed changes
     width: 40px;
     background-position: -101px -156px;
 }
 
+<<<<<<< Updated upstream
 #nav-menu li:nth-child(5) span:first-child {
+=======
+nav li:nth-child(5) span:first-child {
+>>>>>>> Stashed changes
     width: 26px;
     background-position: -279px -156px;
 }
 
+<<<<<<< Updated upstream
 #nav-menu li:nth-child(6) span:first-child {
+=======
+nav li:nth-child(6) span:first-child {
+>>>>>>> Stashed changes
     width: 25px;
     background-position: -70px -285px;
 }
 
+<<<<<<< Updated upstream
 #nav-menu li:nth-child(7) span:first-child {
     width: 35px;
     background-position: -125px -130px;
@@ -276,6 +381,13 @@ n#nav-menu li:nth-child(16) span:first-child {
     background-position: 0 -104px;
 }
 
+=======
+nav li:nth-child(7) span:first-child {
+    width: 36px;
+    background-position: -125px -130px;
+}
+
+>>>>>>> Stashed changes
 .nav-divider{
     display: inline-block;
     margin: 18px 16px 0;
@@ -286,6 +398,7 @@ n#nav-menu li:nth-child(16) span:first-child {
 
 #search-ranking {
     position: absolute;
+<<<<<<< Updated upstream
     top: 14px;
     right: 0;
     width: 198px;
@@ -324,12 +437,17 @@ n#nav-menu li:nth-child(16) span:first-child {
 
 #search-ranking:hover ul { /*마우스 갖다대면 나오게 한다*/
     display: inline-block;
+=======
+    top: 16px;
+    right: 240px;
+>>>>>>> Stashed changes
 }
 
 #rank-number {
     margin-top: -9px;
     color: #00ab33;
     font-size: 16px;
+<<<<<<< Updated upstream
 }
 
 #rank-title {
@@ -531,4 +649,6 @@ main {
     width: 330px;
     height: 130px;
     background: #555;
+=======
+>>>>>>> Stashed changes
 }
