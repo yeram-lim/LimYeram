@@ -3,7 +3,11 @@
 }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 html, body{ /* 얘네는 기본적으로 쓸데없는 공백 없애고 시작*/
+=======
+html, body{ /* 얘네는 기본적으로 공백 없애고 시작*/
+>>>>>>> Stashed changes
 =======
 html, body{ /* 얘네는 기본적으로 공백 없애고 시작*/
 >>>>>>> Stashed changes
@@ -12,6 +16,7 @@ html, body{ /* 얘네는 기본적으로 공백 없애고 시작*/
     font-family: Dotum, '돋움', Helvetica, "Apple SD Gothic Neo", sans-serif; /*글씨체 컴퓨터에 존재하는 순서대로 넣어줌*/
 }
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 h1, h2, h3, h4, h5, h6{ 
     margin: 0;    
@@ -33,6 +38,11 @@ h1, h2, h3, h4, h5, h6{
     position: fixed;
     top: 50px;
 >>>>>>> Stashed changes
+=======
+#fixed{
+    position: fixed;
+    top: 50px;
+>>>>>>> Stashed changes
     right: 50px;
     display: inline-block;
     width: 100px;
@@ -40,6 +50,7 @@ h1, h2, h3, h4, h5, h6{
     border: 1px solid black;
     border-radius: 50px; /*둥글게 둥글게*/
 }
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 
 /*css는 조장, 부모의 css태그를 덮어쓴다.*/
@@ -56,6 +67,8 @@ h1, h2, h3, h4, h5, h6{
 .relative {
     position: relative;
 =======
+=======
+>>>>>>> Stashed changes
 /*css는 조장, 부모의 css태그를 덮어쓴다.*/
 /* 선택자(selector) */
 
@@ -66,6 +79,9 @@ h1, h2, h3, h4, h5, h6{
     height: 1px;
     margin: -1px;
     overflow: hidden;
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 }
 
@@ -84,7 +100,11 @@ header {
 }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #header-top sapn {
+=======
+#header-top {
+>>>>>>> Stashed changes
 =======
 #header-top {
 >>>>>>> Stashed changes
@@ -97,9 +117,13 @@ header {
 #header-search {
     clear: both; /*float와 안 겹치게 만들어준다.*/
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     padding-top: 45px;
 }
 
+=======
+}
+>>>>>>> Stashed changes
 =======
 }
 >>>>>>> Stashed changes
@@ -108,7 +132,11 @@ header {
 }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #header-search h1 {/* 자식 선택할 때 > 꺽새 사용 */
+=======
+div#header-search h1 {/* 자식 선택할 때 > 꺽새 사용 */
+>>>>>>> Stashed changes
 =======
 div#header-search h1 {/* 자식 선택할 때 > 꺽새 사용 */
 >>>>>>> Stashed changes
@@ -130,12 +158,18 @@ div#header-search h1 {/* 자식 선택할 때 > 꺽새 사용 */
 }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 /*div#header-center h1{  
     자손(손자,손자의 자식 등등 모두) 선택할 때 그냥 띄어쓰기 사용
 } 
 */
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 #header-search h2 { /* 시각장애인들을 위해 표시는 하지만 화면에는 안 보이게 만들기 */
     display: none; /* 일반사람 눈에는 안보이고 검색 엔진이 읽는다 */
@@ -143,7 +177,11 @@ div#header-search h1 {/* 자식 선택할 때 > 꺽새 사용 */
 
 #header-search fieldset {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     margin-left: 18px;
+=======
+    margin-left: 20px;
+>>>>>>> Stashed changes
 =======
     margin-left: 20px;
 >>>>>>> Stashed changes
@@ -188,7 +226,11 @@ div#header-search h1 {/* 자식 선택할 때 > 꺽새 사용 */
     height: 11px;
     display: inline-block;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     margin: 0 6px; /*상하, 좌우 같으면 2개로 줄여 씀*/
+=======
+    margin: 0 10px; /*상하, 좌우 같으면 2개로 줄여 씀*/
+>>>>>>> Stashed changes
 =======
     margin: 0 10px; /*상하, 좌우 같으면 2개로 줄여 씀*/
 >>>>>>> Stashed changes
@@ -203,7 +245,11 @@ div#header-search h1 {/* 자식 선택할 때 > 꺽새 사용 */
     height: 4px;
     display: inline-block;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     margin: 0 6px;
+=======
+    margin: 0;
+>>>>>>> Stashed changes
 =======
     margin: 0;
 >>>>>>> Stashed changes
@@ -213,7 +259,11 @@ div#header-search h1 {/* 자식 선택할 때 > 꺽새 사용 */
 #search-image {
     background-image: url(./sp_search.png);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     background-position: -3px -60px;
+=======
+    background-position: -4px -60px;
+>>>>>>> Stashed changes
 =======
     background-position: -4px -60px;
 >>>>>>> Stashed changes
@@ -222,7 +272,11 @@ div#header-search h1 {/* 자식 선택할 때 > 꺽새 사용 */
     height: 21px;
     display: inline-block;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     margin: 14px;
+=======
+    margin: 10px;
+>>>>>>> Stashed changes
 =======
     margin: 10px;
 >>>>>>> Stashed changes
@@ -233,6 +287,10 @@ nav{
     border-top: 1px solid #f1f3f6; /*솔리드는 직선*/
     border-bottom: 1px solid #d1d8e4;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+    position: relative;
+>>>>>>> Stashed changes
 =======
     position: relative;
 >>>>>>> Stashed changes
@@ -246,6 +304,7 @@ nav ul{
 }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #nav-menu li {
     display: inline-block;
 }
@@ -258,22 +317,30 @@ nav ul{
 
 #nav-menu li span:first-child {
 =======
+=======
+>>>>>>> Stashed changes
 nav li {
     display: inline-block;
 }
 
 nav li span:first-child{
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     height: 16px;
     display: inline-block;
     background-image: url(https://s.pstatic.net/static/www/img/uit/2019/sp_nav.png);
     background-repeat: no-repeat;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     margin-left: 10px;
 }
 
 #nav-menu li:nth-child(2) span:first-child {
 =======
+=======
+>>>>>>> Stashed changes
     margin-left: 14px;
 }
 
@@ -284,13 +351,20 @@ nav li:first-child span:first-child {
 }
 
 nav li:nth-child(2) span:first-child {
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     width: 27px;
     background-position: -279px -52px;
 }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #nav-menu li:nth-child(3) span:first-child {
+=======
+nav li:nth-child(3) span:first-child {
+>>>>>>> Stashed changes
 =======
 nav li:nth-child(3) span:first-child {
 >>>>>>> Stashed changes
@@ -299,7 +373,11 @@ nav li:nth-child(3) span:first-child {
 }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #nav-menu li:nth-child(4) span:first-child {
+=======
+nav li:nth-child(4) span:first-child {
+>>>>>>> Stashed changes
 =======
 nav li:nth-child(4) span:first-child {
 >>>>>>> Stashed changes
@@ -308,7 +386,11 @@ nav li:nth-child(4) span:first-child {
 }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #nav-menu li:nth-child(5) span:first-child {
+=======
+nav li:nth-child(5) span:first-child {
+>>>>>>> Stashed changes
 =======
 nav li:nth-child(5) span:first-child {
 >>>>>>> Stashed changes
@@ -317,7 +399,11 @@ nav li:nth-child(5) span:first-child {
 }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #nav-menu li:nth-child(6) span:first-child {
+=======
+nav li:nth-child(6) span:first-child {
+>>>>>>> Stashed changes
 =======
 nav li:nth-child(6) span:first-child {
 >>>>>>> Stashed changes
@@ -325,6 +411,7 @@ nav li:nth-child(6) span:first-child {
     background-position: -70px -285px;
 }
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 #nav-menu li:nth-child(7) span:first-child {
     width: 35px;
@@ -382,11 +469,16 @@ n#nav-menu li:nth-child(16) span:first-child {
 }
 
 =======
+=======
+>>>>>>> Stashed changes
 nav li:nth-child(7) span:first-child {
     width: 36px;
     background-position: -125px -130px;
 }
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 .nav-divider{
     display: inline-block;
@@ -398,6 +490,7 @@ nav li:nth-child(7) span:first-child {
 
 #search-ranking {
     position: absolute;
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
     top: 14px;
     right: 0;
@@ -441,12 +534,17 @@ nav li:nth-child(7) span:first-child {
     top: 16px;
     right: 240px;
 >>>>>>> Stashed changes
+=======
+    top: 16px;
+    right: 240px;
+>>>>>>> Stashed changes
 }
 
 #rank-number {
     margin-top: -9px;
     color: #00ab33;
     font-size: 16px;
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 }
 
@@ -649,6 +747,8 @@ main {
     width: 330px;
     height: 130px;
     background: #555;
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 }
