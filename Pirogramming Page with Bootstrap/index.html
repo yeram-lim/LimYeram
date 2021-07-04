@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<!--nav-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+<!--main page-->
+    <main>
+        <div class="container mt-5">
+            <div class="text-center mt-10">
+                <h3 class="display-5 text-center mt-10">Pirogramming15</h3>
+                <p class="lead" class="text-center">Cheer up</p>
+                <hr class="my-4">
+                <a class="btn btn-primary btn-md" href="#" role="button">Get Started</a>
+            </div>            
+        </div>
+        <div class="container mt-5">
+            <div class="text-center mt-10">
+                <h4 class="display-7 text-center mt-10">Built On The Bootstrap Grid</h4>
+                <p class="lead" class="text-center">Cheer up</p>
+                <a class="btn btn-primary btn-md" href="#" role="button">Learn More</a>
+            </div>            
+        </div>
+<!--아이콘-->
+        <h1 class="text-center mt-5">Flexible Layouts</h1>
+        <div class="container text-center">
+            <div class="row">
+                <div class="card col" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <h5 class="card-title">Responsive</h5>
+                    <div class="card-body">
+                        <p class="card-text">Your site looks good everwhere</p>
+                    </div>
+                </div>
+                <div class="card col" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <h5 class="card-title">Responsive</h5>
+                    <div class="card-body">
+                        <p class="card-text">Your site looks good everwhere</p>
+                    </div>
+                </div>  
+                <div class="card col" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <h5 class="card-title">Responsive</h5>
+                    <div class="card-body">
+                        <p class="card-text">Your site looks good everwhere</p>
+                    </div>
+                </div>                     
+            </div>
+
+<!--사진 넣기-->
+        <div class="container mt-5">
+            <div class="row">
+                <img class="col" src="..." alt="...">
+                <img class="col" src="..." alt="...">
+                <img class="col" src="..." alt="...">
+            </div>
+            <div class="row">
+                <img class="col" src="..." alt="...">
+                <img class="col" src="..." alt="...">
+                <img class="col" src="..." alt="...">                
+            </div>
+        </div>
+
+<!--연락하기-->
+        <div class="container text-center mt-5">
+            <div>Get in Touch</div>
+            <hr class="my-4">
+            <div>We love feedback. Fill out the form below and we'll get back to you as soon as possiple.</div>
+            <div class="row">
+                <div class="col">
+                    <input class="form-control" type="text" placeholder="Name">
+                </div>
+                <div class="col">
+                    <input class="form-control" type="text" placeholder="Phone">
+                </div>
+                <div class="col">
+                    <input class="form-control" type="text" placeholder="Email">
+                </div>
+            </div>
+            <input class="form-control form-control-lg" type="text" placeholder="Your message here..">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                send
+            </button>
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                        ...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </main>
+
+<!--footer!-->
+    <footer>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col">
+                    <div>
+                        <h3>Infomation</h3>
+                        <ul>
+                            <li>Products</li>
+                            <li>Services</li>
+                            <li>Benefits</li>
+                            <li>Developers</li>
+                        </ul>
+                    </div>                    
+                </div>
+                <div class="col">
+                    <div>
+                        <h3>About</h3>
+                        <ul>
+                            <li>Contact US</li>
+                            <li>Deliver Information</li>
+                            <li>Privacy Policy</li>
+                            <li>Terms & Conditions</li>
+                        </ul>
+                    </div>                    
+                </div>
+                <div class="col">
+                    <div>
+                        <h3>Stay Posted</h3>
+                        <input class="form-control" type="text" placeholder="Your message here..">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">send</button>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
