@@ -13,7 +13,7 @@
 
 <body>
 <!------nav------>
-    <!-- Modal -->
+    <!-- Modal은 밖으로 빼야 fixde top의 영향을 안 받는다. -->
     <div class="modal fade" id="about" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content bg-dark text-light">
@@ -33,13 +33,14 @@
             </div>
         </div>
     </div>
+    <!--본격적인 nav-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top px-3">
-        <button class="navbar-toggler mr-5" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand mr-5" href="#">Pirogramming15</a>
-        <span class="nav-link disabled text-info mr-5" tabindex="-1" aria-disabled="true">LimYeram</span>
         <div class="container-fluid">
+            <button class="navbar-toggler" type="button" href="#navbarTogglerDemo01" data-bs-toggle="collapse" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand mr-5" href="#main">Pirogramming15</a>
+            <span class="text-info mr-5 nav-link disabled" tabindex="-1" aria-disabled="true">LimYeram</span>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
@@ -55,22 +56,19 @@
                         <a class="nav-link" href="#Contact">Contact</a>
                     </li>
                 </ul>
-                <form class="d-flex">
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#about">
-                        About
-                    </button>
-                </form>
+                <button type="button" class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#about">
+                    About
+                </button>
             </div>
-        </div>
-    </nav>
+        </div> 
+    </nav> 
 
 <!-------main page------>
     <main>
-        <div class="container position-relative vh-100">
+        <div class="container position-relative vh-100" id="main">
             <div class="my-5 text-center position-absolute top-50 start-50 translate-middle w-100">
-                <h3 class="display-5 text-center mt-5">Pirogramming15</h3>
-                <p class="lead" class="text-center">Cheer up</p>
+                <h3 class="display-5 text-center mt-5 fw-bold">Pirogramming15</h3>
+                <p class="text-center fw-bolder">Cheer up</p>
                 <hr class="one">
                 <a class="btn btn-primary btn-md" href="#Intro" role="button">Get Started</a>  
             </div>
