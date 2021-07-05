@@ -14,13 +14,39 @@
 
 <body>
 <!--nav-->
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <div class="position-relative">
-            <button class="navbar-toggler collapsed position-absolute top-50 start-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand ml-5" href="#">Pirogramming15</a>
+        <span class="nav-link disabled text-info" href="#" tabindex="-1" aria-disabled="true">Lim Yeram</span>
+        <div class="container-fluid">
+            <button class="navbar-toggler mr-5" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-            </button>            
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#Intro">Intro</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Highlights">Highlights</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Gallery">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Contact">Contact</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <button type="button" class="btn btn-outline-info position-absolute top-50 end-0 translate-middle">About</button>
+                </form>
+            </div>
         </div>
-        <div class="container-fluid ">
+    </nav>
+    <!-- <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <button class="navbar-toggler collapsed position-absolute top-50 start-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>   
+        <div class="container-fluid">
         <a class="navbar-brand" href="#">Pirogramming15</a>
         <a class="nav-link disabled text-info" href="#" tabindex="-1" aria-disabled="true">Lim Yeram</a>
             <div class="navbar-collapse collapse position-relative" id="navbarCollapse">
@@ -45,11 +71,10 @@
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav> -->
 
 <!--main page-->
     <main>
-        
         <div class="container position-relative vh-100">
             <div class="my-5 text-center position-absolute top-50 start-50 translate-middle w-100">
                 <h3 class="display-5 text-center mt-5">Pirogramming15</h3>
@@ -58,9 +83,9 @@
                 <a class="btn btn-primary btn-md" href="#" role="button">Get Started</a>  
             </div>
         </div>
-        <div class="vh-100 bg-secondary position-relative">
+        <div class="vh-100 bg-secondary position-relative" id="Intro">
             <div class="container position-absolute top-50 start-50 translate-middle">
-                <div class="text-center w-100">
+                <div class="text-center w-100" >
                     <p class="text-center text-light fs-6">
                     <h4 class="display-7 text-center mt-10 text-danger fs-2 fw-bold mb-4">Built On The Bootstrap Grid</h4>
                     <p class="text-center text-light fs-6 mb-4">
@@ -73,111 +98,119 @@
             </div>
         </div>
 <!--아이콘-->
-        <div class="bg-dark vh-auto pt-5 pb-5">
-            <div class="container">
-                <h1 class="text-center text-primary fs-2 fw-bold mb-5">Flexible Layouts</h1>     
-                <div class="container text-center">
-                    <div class="row mb-5">
-                        <div class="col-lg-4 col-sm-12">
-                            <img src="./tv.png" class="card-img-top w-25" alt="moniter">
-                            <h5 class="card-title text-light">Responsive</h5>
-                            <p class="card-text text-light font-weight-lighter">Your site looks good everwhere</p>
+        <div id="Highlights">
+            <div class="bg-dark vh-auto pt-5 pb-5" >
+                <div class="container">
+                    <h1 class="text-center text-primary fs-2 fw-bold mb-5">Flexible Layouts</h1>     
+                    <div class="container text-center">
+                        <div class="row mb-5">
+                            <div class="col-lg-4 col-sm-12">
+                                <img src="./tv.png" class="card-img-top w-25" alt="moniter">
+                                <h5 class="card-title text-light">Responsive</h5>
+                                <p class="card-text text-light font-weight-lighter">Your site looks good everwhere</p>
+                            </div>
+                            <div class="col-lg-4 col-sm-12">
+                                <img src="./sass2.png" class="card-img-top w-25" alt="scretch">
+                                <h5 class="card-title text-light">Customizable</h5>
+                                <p class="card-text text-light font-weight-lighter">Easy to theme and customize with SASS</p>
+                            </div>  
+                            <di class="col-lg-4 col-sm-12">
+                                <img src="./star.png" class="card-img-top w-25" alt="star">
+                                <h5 class="card-title text-light">Consistent</h5>
+                                <p class="card-text text-light font-weight-lighter">A mature, well-tested, stable codebase</p>
+                            </div>                     
                         </div>
-                        <div class="col-lg-4 col-sm-12">
-                            <img src="./sass2.png" class="card-img-top w-25" alt="scretch">
-                            <h5 class="card-title text-light">Customizable</h5>
-                            <p class="card-text text-light font-weight-lighter">Easy to theme and customize with SASS</p>
-                        </div>  
-                        <di class="col-lg-4 col-sm-12">
-                            <img src="./star.png" class="card-img-top w-25" alt="star">
-                            <h5 class="card-title text-light">Consistent</h5>
-                            <p class="card-text text-light font-weight-lighter">A mature, well-tested, stable codebase</p>
-                        </div>                     
                     </div>
                 </div>
             </div>
         </div>
+
 <!--사진 넣기-->
-        <div class="bg-dark vh-auto" id="Gallery">
-            <div class="container pb-5">
-                <div class="row d-flex align-items-center">
-                    <img class="col-lg-4 col-md-6 col-sm-12 px-5" src="./cat4.jpg" alt="dog&cat">
-                    <img class="col-lg-4 col-md-6 col-sm-12 px-5" src="./dog1.jpg" alt="dog&cat">
-                    <img class="col-lg-4 col-md-6 col-sm-12 px-5" src="./cat2.jpg" alt="dog&cat">
-                    <img class="col-lg-4 col-md-6 col-sm-12 px-5" src="./dog2.jpg" alt="dog&cat">
-                    <img class="col-lg-4 col-md-6 col-sm-12 px-5" src="./cat1.jpg" alt="dog&cat">
-                    <img class="col-lg-4 col-md-6 col-sm-12 px-5" src="./dog3.jpg" alt="dog&cat"> 
-                </div>
-            </div>                        
+        <div id="Gallery">
+            <div class="bg-dark vh-auto">
+                <div class="container pb-5">
+                    <div class="row d-flex align-items-center">
+                        <img class="col-lg-4 col-md-6 col-sm-12 px-5" src="./cat4.jpg" alt="dog&cat">
+                        <img class="col-lg-4 col-md-6 col-sm-12 px-5" src="./dog1.jpg" alt="dog&cat">
+                        <img class="col-lg-4 col-md-6 col-sm-12 px-5" src="./cat2.jpg" alt="dog&cat">
+                        <img class="col-lg-4 col-md-6 col-sm-12 px-5" src="./dog2.jpg" alt="dog&cat">
+                        <img class="col-lg-4 col-md-6 col-sm-12 px-5" src="./cat1.jpg" alt="dog&cat">
+                        <img class="col-lg-4 col-md-6 col-sm-12 px-5" src="./dog3.jpg" alt="dog&cat"> 
+                    </div>
+                </div>                        
+            </div>
         </div>
 
 <!--연락하기-->
-        <div class="bg-secondary vh-auto pt-3 pb-5">
-            <div class="container text-center mt-5 w-75 vh-auto">
-                <div class="text-primary fs-2 fw-bold mb-3">Get in Touch</div>
-                <hr class="my-4">
-                <div class="text-light mb-5">We love feedback. Fill out the form below and we'll get back to you as soon as possiple.</div>
-                <div class="row">
-                    <div class="col-lg-4 col-sm-12 mb-4">
-                        <input class="form-control" type="text" placeholder="Name">
+        <div id="Contact">
+            <div class="bg-secondary vh-auto pt-3 pb-5">
+                <div class="container text-center mt-5 w-75 vh-auto">
+                    <div class="text-primary fs-2 fw-bold mb-3">Get in Touch</div>
+                    <hr class="my-4">
+                    <div class="text-light mb-5">We love feedback. Fill out the form below and we'll get back to you as soon as possiple.</div>
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-12 mb-4">
+                            <input class="form-control" type="text" placeholder="Name">
+                        </div>
+                        <div class="col-lg-4 col-sm-12 mb-4">
+                            <input class="form-control" type="text" placeholder="Phone">
+                        </div>
+                        <div class="col-lg-4 col-sm-12 mb-4">
+                            <input class="form-control" type="text" placeholder="Email">
+                        </div>
                     </div>
-                    <div class="col-lg-4 col-sm-12 mb-4">
-                        <input class="form-control" type="text" placeholder="Phone">
-                    </div>
-                    <div class="col-lg-4 col-sm-12 mb-4">
-                        <input class="form-control" type="text" placeholder="Email">
-                    </div>
-                </div>
-                <textarea class="form-control mb-4 pb-5" rows="10" placeholder="Your message here.."></textarea>
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#contact-send">
-                    send
-                </button>
-                
-                <!-- Modal -->
-                <div class="modal fade" id="contact-send" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                            내용
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
+                    <textarea class="form-control mb-4 pb-5" rows="10" placeholder="Your message here.."></textarea>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#contact-send">
+                        send
+                    </button>
+                    
+                    <!-- Modal -->
+                    <div class="modal fade" id="contact-send" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                내용
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- <div class="modal" tabindex="-1" id="contact-send" role="dialog">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title">Modal title</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <p>Modal body text goes here.</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
+                    <!-- <div class="modal" tabindex="-1" id="contact-send" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Modal title</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Modal body text goes here.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#contact-send">
+                        send
+                    </button> -->
                 </div>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#contact-send">
-                    send
-                </button> -->
             </div>
         </div>
+
         
     </main>
 
