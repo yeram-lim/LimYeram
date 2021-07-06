@@ -1,2 +1,2 @@
-# LimYeram
-💻 임예람
+# Pirogramming 15th
+💻 Lim Yeram Repository
