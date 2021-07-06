@@ -2,8 +2,9 @@ current_num = 1
 numA = 0
 numB = 0
 num = 0
-while current_num < 31:
+while current_num <= 32:
     if current_num > 31:
+        print('playerA win!')
         break
     else:
         while True:
@@ -23,6 +24,7 @@ while current_num < 31:
             current_num += 1
     
     if current_num > 31:
+        print('playerB win!')
         break
     else:
         while True:
