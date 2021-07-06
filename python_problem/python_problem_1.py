@@ -8,3 +8,8 @@ while True:
         print('정수를 입력하세요')
     except TypeError:
         print('1, 2, 3만 입력 가능')    
+
+i = 1
+while i <= num:
+    print('playerA : %d' %i)
+    i += 1
