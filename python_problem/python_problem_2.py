@@ -26,15 +26,23 @@ def Menu2() :
 ##############  menu 3
 def Menu3() :
     print('------------------------------------')
-    print('name       mid      final      grade')
+    print('name\tmid\tfinal\tgrade')
     print('------------------------------------')
-    for key in student_name:
-        print(student_name[key], student_name[key][0],student_name[key][1],student_name[key][2])
-
+    for key in student_name.keys():
+        print(f'{key}\t{student_name[key][0]}\t{student_name[key][1]}\t{student_name[key][2]}')
 
 ##############  menu 4
 #def Menu4(#매개변수가 필요한지 판단 후 코딩할 것):
     #학생 정보 삭제하는 코딩
+
+def keys_check():
+    if len(student_name) == 0: #입력된 것이 없을때(1 실행x)
+        raise ValueError
+    for key in student_name.keys(): #키를 돌린다.
+        if len(student_name[key]) == 3: #학점까지 모두 있을 때
+            continue
+        else: #키의 값이 3개 미만인게 있으면
+            raise IndexError
 
 #학생 정보를 저장할 변수 초기화
 print("*Menu*******************************")
@@ -73,9 +81,27 @@ while True :
         #예외사항이 아닌 경우 2번 함수 호출
         #"Grading to all students." 출력
 
-    #elif choice == "3" :
+    elif choice == "3" :
+        try:
+            keys_check()
+        except ValueError:
+            print('No student data!')
+        except IndexError:
+            print("There is a student who didn't get grade")
+        else:
+            Menu3()
         #예외사항 처리(저장된 학생 정보의 유무, 저장되어 있는 학생들의 학점이 모두 부여되어 있는지)
         #예외사항이 아닌 경우 3번 함수 호출
+
+        # if len(student_name) > 0: #일단 1번을 행하고 와야한다.
+        #     for key in student_name.keys(): #키를 돌린다.
+        #         if len(student_name[key]) == 3: #학점까지 모두 있을 때
+        #             continue
+        #         elif len(student_name[key]) == 2:
+        #             print("There is a student who didn't get grade")
+        # else:
+        #     print('No student data!')
+        # Menu3()
 
     #elif choice == "4" :
         #예외사항 처리(저장된 학생 정보의 유무)
