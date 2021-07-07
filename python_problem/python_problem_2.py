@@ -35,7 +35,6 @@ def Menu4(): #학생 정보 삭제하는 코딩
     del student_name[del_name]
     print(f'{del_name} student information is deleted.')
     
-
 def keys_check():
     if len(student_name) == 0: #입력된 것이 없을때(1 실행x)
         raise ValueError
@@ -126,7 +125,9 @@ while True :
         #입력 받은 학생의 존재 유무 체크 후, 없으면 "Not exist name!" 출력 ok
         #있으면(예를 들어 kim 이라 하면), 4번 함수 호출 후에 "kim student information is deleted." 출력
 
-    #elif choice == "5" :
+    elif choice == "5" :
+        print('Exit Program!')
+        break
         #프로그램 종료 메세지 출력
         #반복문 종료
 
