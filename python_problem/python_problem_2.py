@@ -13,12 +13,11 @@ def Menu2() :
             continue
         else:
             average = (int(student_name[key][0])+int(student_name[key][1]))/2
-
     if average >= 90:
         student_name[key] = [student_name[key][0], student_name[key][1], 'A']
-    if average >= 80:
+    elif average >= 80:
         student_name[key] = [student_name[key][0], student_name[key][1], 'B']
-    if average >= 70:
+    elif average >= 70:
         student_name[key] = [student_name[key][0], student_name[key][1], 'C']
     else:
         student_name[key] = [student_name[key][0], student_name[key][1], 'D']
@@ -54,22 +53,23 @@ print("5. Exit program")
 print("*************************************")
 while True :
     choice = input("Choose menu 1, 2, 3, 4, 5 : ")
-    if choice == "1": ##@@@@@@예외 하나 남음
+    if choice == "1": 
         while True:
             try:
                 name, mid, final = input('Enter name mid-score final-score : ').split()
                 if str.isdigit(mid) == False or str.isdigit(final)== False: # 받은 mid 값을 str인지 확인하고 불린값 출력. 그리고 그 불린값과 False비교해 true면(false와 일치하면) TypeError 발생시킨다.
                     raise TypeError
+                if name in student_name.keys():
+                    raise IndexError
             except ValueError: # 3개 다 안 쓰면 예외 문구 발생
                 print('Num of data is not 3!')
             except TypeError: #정수 입력하지 않으면 예외 문구 발생
                 print('Score is not positive integer!')
+            except IndexError: # 중복 이름 적으면 예외 문구 발생
+                print('Already exist name!')
             else:
                 set_data = Menu1(name, mid, final) # 학생 이름과 점수들을 Menu1 함수에 넣는다.
                 break
-                #학생 정보 입력받기 ok
-                #예외사항 처리(데이터 입력 갯수ok, @@@@@이미 존재하는 이름@@@@@, 입력 점수 값이 양의 정수인지ok)
-                #예외사항이 아닌 입력인 경우 1번 함수 호출ok
 
     elif choice == "2" :
         if len(student_name) > 0:
