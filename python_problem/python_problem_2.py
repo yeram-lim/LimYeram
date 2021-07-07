@@ -1,32 +1,30 @@
 #함수 이름은 변경 가능합니다.
-student_name = []
-student_mid =[]
-student_final =[]
-student_grade = []
+student_name = {} #ex){'yeram' : [100, 100]}
 grade = 0
 
 ##############  menu 1
 def Menu1(name, mid, final): #학생들 이름과 점수를 리스트에 보관한다.
-    student_name.append(name)
-    student_mid.append(mid)
-    student_final.append(final)
+    student_name[name] = [mid, final] #dict 요소 추가
 
 ##############  menu 2
-def Menu2(mid, final) :
-    average = (mid + final) /2
-    if average >= 90:
-        grade = 'A'
-    if average >= 80:
-        grade = 'B'
-    if average >= 70:
-        grade = 'C'
-    else:
-        grade = 'D'
-    student_grade.append(grade)
+def Menu2() :
+    for key in student_name:
+        if len(student_name[key]) == 3: #학점이 있다면
+            continue
+        else:
+            average = (int(student_name[key][0])+int(student_name[key][1]))/2
 
+    if average >= 90:
+        student_name[key] = [student_name[key][0], student_name[key][1], 'A']
+    if average >= 80:
+        student_name[key] = [student_name[key][0], student_name[key][1], 'B']
+    if average >= 70:
+        student_name[key] = [student_name[key][0], student_name[key][1], 'C']
+    else:
+        student_name[key] = [student_name[key][0], student_name[key][1], 'D']
 
 ##############  menu 3
-#def Menu3(#매개변수가 필요한지 판단 후 코딩할 것) :
+#def Menu3() :
     #출력 코딩
 
 ##############  menu 4
@@ -60,7 +58,13 @@ while True :
                 #예외사항 처리(데이터 입력 갯수ok, @@@@@이미 존재하는 이름@@@@@, 입력 점수 값이 양의 정수인지ok)
                 #예외사항이 아닌 입력인 경우 1번 함수 호출ok
 
-#elif choice == "2" :
+    elif choice == "2" :
+        if len(student_name) > 0:
+            Menu2()
+            print("Grading to all students.")
+        else:
+            print('No student data!')
+
 
         #예외사항 처리(저장된 학생 정보의 유무)
         #예외사항이 아닌 경우 2번 함수 호출
