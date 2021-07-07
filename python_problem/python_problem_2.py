@@ -24,8 +24,13 @@ def Menu2() :
         student_name[key] = [student_name[key][0], student_name[key][1], 'D']
 
 ##############  menu 3
-#def Menu3() :
-    #출력 코딩
+def Menu3() :
+    print('------------------------------------')
+    print('name       mid      final      grade')
+    print('------------------------------------')
+    for key in student_name:
+        print(student_name[key], student_name[key][0],student_name[key][1],student_name[key][2])
+
 
 ##############  menu 4
 #def Menu4(#매개변수가 필요한지 판단 후 코딩할 것):
@@ -41,7 +46,7 @@ print("5. Exit program")
 print("*************************************")
 while True :
     choice = input("Choose menu 1, 2, 3, 4, 5 : ")
-    if choice == "1":
+    if choice == "1": ##@@@@@@예외 하나 남음
         while True:
             try:
                 name, mid, final = input('Enter name mid-score final-score : ').split()
@@ -64,8 +69,6 @@ while True :
             print("Grading to all students.")
         else:
             print('No student data!')
-
-
         #예외사항 처리(저장된 학생 정보의 유무)
         #예외사항이 아닌 경우 2번 함수 호출
         #"Grading to all students." 출력
