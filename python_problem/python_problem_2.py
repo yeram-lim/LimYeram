@@ -1,8 +1,13 @@
 #함수 이름은 변경 가능합니다.
+student_name = []
+student_mid =[]
+student_final =[]
 
 ##############  menu 1
-def Menu1(self, name, mid, final) :
-    사전에 학생 정보 저장하는 코딩 
+def Menu1(name, mid, final):
+    student_name.append(name)
+    student_mid.append(mid)
+    student_final.append(final)
 
 ##############  menu 2
 #def Menu2(#매개변수가 필요한지 판단 후 코딩할 것) :
@@ -27,23 +32,23 @@ print("*************************************")
 # while True :
 choice = input("Choose menu 1, 2, 3, 4, 5 : ")
 if choice == "1":
-    try:
-        name, mid, final = input('Enter name mid-score final-score : ').split()
-        if str.isdigit(mid) == False or str.isdigit(final)== False: # 받은 mid 값을 str인지 확인하고 아니면 False한다. 그리고 그 불린값이 False가 있다면 TypeError 발생시킨다.
-            raise TypeError
-    except ValueError: # 3개 다 안 쓰면 저절로 실행된다.
-        print('Num of data is not 3!')
-    except TypeError:
-        print('Score is not positive integer!')
-    else:
-        #set_date = def Menu1(self, name, mid, final)
-        #print('set_date')
+    while True:
+        try:
+            name, mid, final = input('Enter name mid-score final-score : ').split()
+            if str.isdigit(mid) == False or str.isdigit(final)== False: # 받은 mid 값을 str인지 확인하고 불린값 출력. 그리고 그 불린값과 False비교해 true면(false와 일치하면) TypeError 발생시킨다.
+                raise TypeError
+        except ValueError: # 3개 다 안 쓰면 예외 문구 발생
+            print('Num of data is not 3!')
+        except TypeError: #정수 입력하지 않으면 예외 문구 발생
+            print('Score is not positive integer!')
+        else:
+            set_data = Menu1(name, mid, final)
+            break
+            #학생 정보 입력받기 ok
+            #예외사항 처리(데이터 입력 갯수ok, 이미 존재하는 이름, 입력 점수 값이 양의 정수인지ok)
+            #예외사항이 아닌 입력인 경우 1번 함수 호출 
 
-        #학생 정보 입력받기 ok
-        #예외사항 처리(데이터 입력 갯수ok, 이미 존재하는 이름, 입력 점수 값이 양의 정수인지ok)
-        #예외사항이 아닌 입력인 경우 1번 함수 호출 
-
-    #elif choice == "2" :
+#elif choice == "2" :
         #예외사항 처리(저장된 학생 정보의 유무)
         #예외사항이 아닌 경우 2번 함수 호출
         #"Grading to all students." 출력
