@@ -9,18 +9,16 @@ def Menu1(name, mid, final): #학생들 이름과 점수를 리스트에 보관�
 ##############  menu 2
 def Menu2() :
     for key in student_name:
-        if len(student_name[key]) == 3: #학점이 있다면
-            continue
-        else:
+        if len(student_name[key]) < 4: #학점이 있다면
             average = (int(student_name[key][0])+int(student_name[key][1]))/2
-    if average >= 90:
-        student_name[key] = [student_name[key][0], student_name[key][1], 'A']
-    elif average >= 80:
-        student_name[key] = [student_name[key][0], student_name[key][1], 'B']
-    elif average >= 70:
-        student_name[key] = [student_name[key][0], student_name[key][1], 'C']
-    else:
-        student_name[key] = [student_name[key][0], student_name[key][1], 'D']
+            if average >= 90:
+                student_name[key] = [student_name[key][0], student_name[key][1], 'A']
+            elif average >= 80:
+                student_name[key] = [student_name[key][0], student_name[key][1], 'B']
+            elif average >= 70:
+                student_name[key] = [student_name[key][0], student_name[key][1], 'C']
+            else:
+                student_name[key] = [student_name[key][0], student_name[key][1], 'D']
 
 ##############  menu 3
 def Menu3() :
@@ -131,5 +129,5 @@ while True :
         #프로그램 종료 메세지 출력
         #반복문 종료
 
-    #else :
-        #"Wrong number. Choose again." 출력
+    else :
+        print('Wrong number. Choose again')
