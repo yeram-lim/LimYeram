@@ -31,8 +31,10 @@ def Menu3() :
         print(f'{key}\t{student_name[key][0]}\t{student_name[key][1]}\t{student_name[key][2]}')
 
 ##############  menu 4
-#def Menu4(#매개변수가 필요한지 판단 후 코딩할 것):
-    #학생 정보 삭제하는 코딩
+def Menu4(): #학생 정보 삭제하는 코딩
+    del student_name[del_name]
+    print(f'{del_name} student information is deleted.')
+    
 
 def keys_check():
     if len(student_name) == 0: #입력된 것이 없을때(1 실행x)
@@ -103,10 +105,25 @@ while True :
         #     print('No student data!')
         # Menu3()
 
-    #elif choice == "4" :
+    elif choice == "4" :
+        try:
+            if len(student_name) == 0:
+                raise ValueError
+        except ValueError:
+            print('No student data!')
+        else:
+            del_name = input('Enter name to delete')
+            try:
+                if str(del_name in student_name.keys()) == "False": # 삭제할 친구 이름이 없는 경우
+                    raise IndexError
+            except IndexError:
+                print('Not exist name!')
+            else:
+                Menu4()
+                
         #예외사항 처리(저장된 학생 정보의 유무)
-        #예외사항이 아닌 경우, 삭제할 학생 이름 입력 받기
-        #입력 받은 학생의 존재 유무 체크 후, 없으면 "Not exist name!" 출력
+        #예외사항이 아닌 경우, 삭제할 학생 이름 입력 받기 ok
+        #입력 받은 학생의 존재 유무 체크 후, 없으면 "Not exist name!" 출력 ok
         #있으면(예를 들어 kim 이라 하면), 4번 함수 호출 후에 "kim student information is deleted." 출력
 
     #elif choice == "5" :
