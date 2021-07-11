@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Sticky Nav</title>
-  <link rel="stylesheet" href="style-START.css">
+  <link rel="stylesheet" href="24강.css">
 </head>
 <body>
 
@@ -54,6 +54,20 @@
   </div>
 
 <script>
+  const nav = document.querySelector('#main'); //일단 id가 main인 요소를 찾는다.
+  const topOfNav = nav.offsetTop;
+
+  function fixNav() { //공간을 차지하지 않고 브라우저의 top에 떠있게 한다.
+    if(window.scrollY >= topOfNav) { //스크롤해서 내린 스크린 화면이 nav보다 크다면(nav 밑의 화면이 나온다면)
+      document.body.style.paddingTop = nav.offsetHeight + 'px'; //패딩을 nav 높이만큼 준다.
+      document.body.classList.add('fixed-nav'); //fixed-nav 클래스 효과 추가
+    } else {
+      document.body.style.paddingTop = 0; //패딩 제거
+      document.body.classList.remove('fixed-nav'); //fixed-nav 클래스 효과 제거
+    }
+  }
+
+  window.addEventListener('scroll', fixNav) //스크롤할 때마다 이벤트 추가
 
 </script>
 
