@@ -42,7 +42,24 @@
 
 <button></button>
 <script>
+  const divs = document.querySelectorAll('div');
+  const button = document.querySelector('button');
 
+  function logText(e) {
+    console.log(this.classList.value); //classList: div가 가진 클래스를 리스트로 만든다.
+    e.stopPropagation(); //bubbling을 멈춘다. (bubbling: 이벤트 자식->부모 순서로 연속 발생) for문의 stop과 같은 역할.
+  }
+
+  document.body.addEventListener('click', logText);
+
+  divs.forEach(div => div.addEventListener('click', logText, { //클릭하면 logText 함수를 실행한다.
+    capture: false, //capture: 아래 방향으로 함수를 연속 실행한다. 
+    once: true //여러번 눌러도 최초 실행한 것만 적용된다.
+  })); 
+
+  button.addEventListener('click', () => {
+    console.lob('click!!');
+  })
 </script>
 </body>
 </html>
