@@ -56,7 +56,25 @@
         timeout = setTimeout(later, wait);
         if (callNow) func.apply(context, args);
       };
+    };
+
+    const sliderImages = document.querySelectorAll('.slide-in');
+
+    function checkSlide(e) {
+      sliderImages.forEach(sliderImage => {
+        const slideInAt = (window.scrollY + window.innerHeight) - sliderImage.height / 2; //이미지의 반정도에 스크롤했을 때 -> (현재의 스크롤바 위치 + 현재 화면의 높이) - 이미지 높이 /2
+        const imageBottom = sliderImage.offsetTop + sliderImage.height; //이미지의 바닥위치 = 화면 꼭대기에서 이미지 꼭대기까지 + 이미지 높이
+        const isHalfShown = slideInAt > sliderImage.offsetTop; //이미지 꼭대기보다 스크롤이 더 내려왔다.
+        const isNotScrolledPast = window.scrollY < imageBottom; //이미지 바닥보다 스크롤이 덜 내려왔다.
+        if (isHalfShown && isNotScrolledPast) { //이미지 중간즈음 스크롤이 있다면 
+          sliderImage.classList.add('active'); //애니메이션 재생!
+        } else {
+          sliderImage.classList.remove('active');
+        }
+      });
     }
+
+    window.addEventListener('scroll', checkSlide) //스크롤할 때 이벤트 실행
 
   </script>
 
