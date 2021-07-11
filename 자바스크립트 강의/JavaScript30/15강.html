@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>LocalStorage</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="15강.css">
 </head>
 <body>
   <!--
@@ -23,12 +23,60 @@
       <input type="text" name="item" placeholder="Item Name" required>
       <input type="submit" value="+ Add Item">
     </form>
+    <!--강의 숙제: 전체 체크 버튼 구현하기-->
+    <input id="selectAllBtn" type='checkbox' name='foods' value='selectall' onclick='selectAll(this)'/> <b>Select All</b> <!--일단 전체 선택할 체크박스 생성한다.-->
   </div>
 
 <script>
   const addItems = document.querySelector('.add-items');
   const itemsList = document.querySelector('.plates');
-  const items = [];
+  const items = JSON.parse(localStorage.getItem('items')) || []; //reload해도 이전에 가졌던 값을 가지고 있는다. 
+  
+  //강의 답
+  function addItem(e) {
+    e.preventDefault(); //페이지 reload를 막는다.
+    const text = (this.querySelector('[name=item]')).value; //범위가 this이기 때문에 [name=item] 사용해서 가져올 수 있다.
+    const item = {
+      text, //text: text 이렇게 키, 값이 같으면 줄일 수 있다.
+      done: false 
+    };
+    items.push(item); //사용자에게 받은 값을 items 배열에 넣는다.
+    populateList(items, itemsList);//localstorage에 넣을 때는 string 형식으로 넣어야 한다. 
+    this.reset();
+  }
+
+  function populateList(plates = [], platesList) { //따로 배열을 쓰는 이유: 다른 메뉴나 배열을 입력해도 잘 저장이 된다. (기존 요소는 버린다.)
+    platesList.innerHTML = plates.map((plate, i) => { //입력하는 값을 라벨값을 가진 리스트 요소로 저장한다.
+      return `
+        <li>
+          <input name='foods' type="checkbox" data-index=${i} id="item${i}" ${plate.done ? 'checked' : ''}/> 
+          <label for="item${i}">${plate.text}</label> 
+        </li>
+      `; //체크는 항상 자동으로 되어서 일부러 체크된 상태라면 체크 박스를 비워준다. 
+    }).join('');
+  }
+
+  function toggleDone(e) { //페이지 reload 해도 체크가 안 풀리게 한다. 
+    if(!e.target.matches('input')) return; //input이 없다면 skip한다.
+    const el = e.target;
+    const index = el.dataset.index;
+    items[index].done = !items[index].done; //아이템 인덱스가 true 되자마자 false 되고 false 되자마자 true 된다. flip-flopping
+    localStorage.setItem('items', JSON.stringify(items)); 
+    populateList(items, itemsList);
+  }
+
+  addItems.addEventListener('submit', addItem);
+  itemsList.addEventListener('click', toggleDone);
+  populateList(items, itemsList);
+
+  //강의 숙제: 전체 체크 버튼 구현하기
+  function selectAll(selectAll)  {
+    const checkboxes = document.getElementsByName('foods'); //name='foods'인 요소를 모두 가져온다.
+    
+    checkboxes.forEach((checkbox) => {
+      checkbox.checked = selectAll.checked;
+    })
+  }
 
 </script>
 
