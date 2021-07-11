@@ -37,28 +37,92 @@
     
     // Array.prototype.filter()
     // 1. Filter the list of inventors for those who were born in the 1500's
+    // const fifteen = inventors.filter(inventor => { //1500년대생을 구분해보자! 
+    //   if(inventor.year >= 1500 && inventor.year < 1600){ 
+    //     return true; //리턴 트루는 함수로 거른(?) 사람들을 저장한다는 뜻이다!
+    //   } 
+    // });
+
+    //화살표 함수는 function(inventor)와 같은 의미, 위와 같은 함수를 화살표 함수로 한 줄에 정리 가능!
+    const fifteen = inventors.filter(inventors => (inventors.year >= 1500 && inventors.year < 1600))
+    console.table(fifteen); //표의 형식으로 출력해준다!!
 
     // Array.prototype.map()
     // 2. Give us an array of the inventors first and last names
+    const fullNames = inventors.map(inventors => `${inventors.first} ${inventors.last}`); //객체의 요소를 합쳐준다!
+    console.log(fullNames);
 
     // Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
+    // const ordered = inventors.sort(function(firstPerson, secondPerson){
+    //   if(firstPerson.year > secondPerson.year){ 
+    //     return 1; 
+    //   } else {
+    //     return -1;
+    //   }
+    // })
+
+    //화살표 함수 써보기
+    const ordered = inventors.sort((firstPerson, secondPerson) => firstPerson.year > secondPerson.year ? 1 : -1); //year를 기준으로 정렬한다.
+    //콜론 기준으로 물음표 앞의 내용이 true면 앞의 내용 반환, false면 뒤의 내용 반환
+    // 반환값이 0보다 크면 두번째 인수(secondPerson)가 앞으로 가고, 0보다 작으면 첫 인수(firstPerson)가 뒤로 가면서 정렬된다.
+    console.table(ordered)
 
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live all together?
+    const totalYears = inventors.reduce((total, inventors) => { //첫 인수는 누적하는 값, 두 번째는 현재 value이다. reduce는 리스트를 순회해서 값을 누적하는 함수라고 보면 될 것 같다.
+      return total + (inventors.passed - inventors.year); 
+    }, 0) //처음 0을 지정해줘서 여기에 누적하게 한다.
+    console.log(totalYears)
 
     // 5. Sort the inventors by years lived
+    // 내 답
+    // const age = inventors.sort((firstPerson, secondPerson) => firstPerson.passed - firstPerson.year > secondPerson.passed - secondPerson.year ? -1 : 1);
+    // console.table(age)
+
+    //동영상 답
+    //sort는 배열 자체가 변경된다고 한다. sort는 함수를 인수로 받는다.
+    //sort는 인수를 비교해서 작은 수를 앞으로 보낸다.
+    const oldest = inventors.sort(function(a, b){
+      const lastGuy = a.passed - a.year;
+      const nextGuy = b.passed - b.year;
+      return lastGuy > nextGuy ? -1 : 1; //앞사람이 더 크면 -1과 0을 비교해서 더 작으니 앞사람이 앞으로 간다. 오래 산 사람을 앞으로.
+    })
+    console.table(oldest)
+
 
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+    const category = document.querySelector('.mw-category'); //문서에서 .mw-category 클래스를 가진 요소를 찾는다.
+    const links = Array.from(category.querySelectorAll('a')); //아까 정의한 카테고리에서 a를 가진 모든 요소를 찾는다. 그리고 리스트로 만든다.
+
+    const de = links
+                .map(link => link.textContent) //링크들을 텍스트로 바꿔서 리스트로 묶어 출력해준다.
+                .filter(streetName => streetName.includes('de')); //de를 포함하는 요소들을 걸러낸다.
 
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
+    const alpha = people.sort((lastOne, nextOne) => {
+      const [aLast, aFirst] = lastOne.split(', '); //일단 이름을 , 기준으로 나눠 배열로 넣는다. 
+      const [bLast, bFirst] = nextOne.split(', ');
+      return aLast > bLast ? 1 : -1; //배열 요소를 비교해서 정렬한다. 알파벳 a 가까울 수록 작다.
+    });
+    console.log(alpha);
 
     // 8. Reduce Exercise
     // Sum up the instances of each of these
-    const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+    const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck'];
+
+    const transportation = data.reduce((obj, item) => {
+      if(!obj[item]) {
+        obj[item] = 0;
+      }
+      obj[item]++; //0에서 아이템 당 1씩 증가시킨다.
+      return obj;
+    }, {}); //아무것도 입력 안 하면 모든 요소가 0부터 시작한다.
+
+    console.log(transportation)
 
   </script>
 </body>
