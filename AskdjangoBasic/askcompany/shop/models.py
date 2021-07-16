@@ -1,3 +1,4 @@
+#from django.conf import settings
 from django.db import models
 
 class Item(models.Model):
@@ -11,5 +12,7 @@ class Item(models.Model):
     def __str__(self):
         return f'<{self.pk}> {self.name}'
     
-    class Meta:
-        ordering = ['id']
+    
+#class Post(models.Model):
+    #author = models.ForeignKey(settings.AUTH_USER_MODE, on_delete=models.CASCADE)
+    #겹치는 데이터가 생기면 이름을 바꾸거나 포기한다.
