@@ -4,6 +4,10 @@
 {% block content %}
     <h2>{{ item.name }}</h2>
 
+    {% if item.photo %} <!--사진이 없으면 그냥 원래 화면 잘 나오게 하기-->
+        <img src="{{ item.photo.url }}" style="max-width: 50%;"/><br/>
+    {% endif %}
+
     가격: {{ item.price|intcomma }}원
 
     {% if item.desc %}
