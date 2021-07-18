@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from .models import Item
 
 def archives_year(requset, year):
@@ -16,3 +16,10 @@ def item_list(request):
         'q': q, #검색창에 내가 검색한 내용이 찍히게 한다.
     })
 
+def item_detail(request, pk):
+    item = get_object_or_404(Item, pk=pk)
+    return render(request, 'shop/item_detail.html', {
+        'item': item,
+    })
+
+ 

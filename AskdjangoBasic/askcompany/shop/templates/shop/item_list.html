@@ -1,27 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop for AskCompany</title>
-</head>
-<body>
-    <h1>AskCompany</h1>
-
+{% extends "shop/layout.html" %}
+    
+{% block content %}
+    {{ block.super }} <!--부모(layout)의 내용을 자식의 내용과 함께 표시한다.-->
     <form action="" method="GET"> <!--검색버튼 만들기-->
         <input type="text" name="q" value="{{ q }}" /> <!--q 검색하면 q 포함한 값 나오기, 이런 기능은 views에서 만든다-->
         <input type="submit" value="검색" />
     </form>
-        <hr/>
+
+    <ul>
         {% for item in item_list %}
-            <div>
-                <h3>{{ item.name }}</h3>
-                <h4>가격: {{ item.price }}</h4>
-                {% if item.desc %}
-                    <p>{{ item.desc }}</p>
-                {% endif %}
-            </div>
+            <li>
+                <a href="/shop/{{ item.pk }}/">
+                    {{ item.name }}
+                </a>
+                {{ item.price }}
+                {{ item.desc }}
+            </li>
         {% endfor %}
-</body>
-</html>
+    </ul>
+{% endblock %}
+    
