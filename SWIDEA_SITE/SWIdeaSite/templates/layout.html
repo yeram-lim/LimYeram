@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}My SW Idea Management{% endblock %}</title>
+        <!-- <style>
+            body { background-color: lightpink; }
+        </style> -->
+    </head>
+    <body>
+        <h2>My SW Idea Management</h1>
+        <h4>아이디어 등록</h4>
+        <h4>아이디어 관리</h4>
+        <h4>개발툴 등록</h4>
+        <h4>개발툴 관리</h4>
+
+        {% block content %} <!--block은 상속하려면 꼭 써야한다.-->
+        {% endblock %}
+    </body>
+</html>
