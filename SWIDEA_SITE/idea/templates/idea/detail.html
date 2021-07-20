@@ -18,8 +18,8 @@
         3) 아이디어 설명: <br/>
         {{idea.desc}}<br/>
     </ul>
-    <a href="" %}">삭제</a>
+    <a href="{% url "idea:idea_delete" idea.id %}">삭제</a>
     <a href="{% url "idea:idea_list" %}">목록</a>
-    <a href="" %}">수정</a>
+    <a href="{% url "idea:idea_update" idea.id %}">수정</a>
 {% endblock %}
     

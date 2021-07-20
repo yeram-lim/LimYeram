@@ -18,14 +18,30 @@ def idea_detail(request, pk):
 
 def idea_create(request, idea=None):
     if request.method == 'POST':
-        form = IdeaForm(request.POST, request.FILES, instance=idea) 
+        form = IdeaForm(request.POST) #, request.FILES, instance=idea 이따가 추가해보기
         if form.is_valid():
-            item = form.save() #ModelForm에서 제공
-            return redirect(item)
+            idea = form.save() #ModelForm에서 제공
+            return redirect('idea:idea_list')
+    else:
+        form = IdeaForm()#instance=idea
+        ctx = {'form': form}
+        return render(request, 'idea/form.html', context=ctx)
+    
+def idea_update(request, pk):
+    idea = get_object_or_404(IdeaList, pk=pk)
+
+    if request.method == 'POST':
+        form = IdeaForm(request.POST, instance=idea)
+        if form.is_valid():
+            idea = form.save()
+            return redirect('idea:idea_detail', pk)
     else:
         form = IdeaForm(instance=idea)
+        ctx = {'form': form }
 
-        return render(request, 'idea/form.html', {
-            'form': form,
-        })
-    
+        return render(request, 'idea/form.html', context=ctx)
+
+def idea_delete(request, pk):
+    post = IdeaList.objects.get(pk=pk)
+    post.delete()
+    return redirect('idea:idea_list')
