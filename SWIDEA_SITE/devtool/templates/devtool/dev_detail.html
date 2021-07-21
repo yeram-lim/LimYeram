@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+    <h1>DevTool Detail</h1>
+    <h4>개발툴 세부내용 페이지입니다. 자신이 다룰 수 있는 개발툴에 대해 상세내용을 확인해 보아요.</h4>
+    <ul>
+        <h3>{{tool.name}}</h3>
+        <h5>{{tool.kind}}</h5>
+        <h5>{{tool.description}}</h5>
+        <hr/>
+        <h4>>만들 수 있는 SW 목록</h4>
+        <h5></h5>
+    </ul>
+    <a href="">삭제</a>
+    <a href="{% url "devtool:devtool_list" %}">목록</a>
+    <a href="">수정</a>
+{% endblock %}

@@ -7,7 +7,9 @@
     <ul>
         {% for devtool in all %}
         <li>
-            <h3>{{ devtool.name}}</h3>
+            <a href="{% url "devtool:devtool_detail" devtool.id %}">
+                <h3>{{ devtool.name}}</h3>
+            </a>
             <hr/>
             <h4>{{ devtool.kind}}</h4>
             <h5>{{ devtool.description}}</h5>
