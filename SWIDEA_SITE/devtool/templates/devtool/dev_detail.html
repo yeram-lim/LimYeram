@@ -10,7 +10,11 @@
         <h5>{{tool.description}}</h5>
         <hr/>
         <h4>>만들 수 있는 SW 목록</h4>
-        <h5></h5>
+        {% for list in all_list%} <!--이따 삭제, idea.views도-->
+            {% if list.devtool == tool.name %}
+                <h5>{{ list.title }}</h5>
+            {% endif %}
+        {% endfor %}
     </ul>
     <a href="{% url "devtool:devtool_delete" tool.id %}">삭제</a>
     <a href="{% url "devtool:devtool_list" %}">목록</a>

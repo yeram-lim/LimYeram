@@ -12,7 +12,7 @@
         1) 아이디어 관심도: <br/>
         {{idea.interest}}<br/>
         2) 예상 개발 툴: <br/>
-        {{idea.devtool}}<br/>
+        <a href="{% url "devtool:devtool_list" %}">{{idea.devtool}}</a><br/>
         3) 아이디어 설명: <br/>
         {{idea.content}}<br/>
     </ul>

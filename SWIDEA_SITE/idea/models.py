@@ -10,9 +10,14 @@ class IdeaList(models.Model):
     interest = models.IntegerField(help_text="아이디어 관심도")
     dev_nodejs = "Node.js"
     dev_spring = "Spring"
-    dev_django = "Django"
+    dev_django = "django"
     dev_javascript = "JavaScript"
-    dev_choices = ((dev_nodejs, "Node.js"), (dev_spring, "Spring"),(dev_django, "Django"),(dev_javascript , "JavaScript"))
+    dev_choices = {
+        (dev_nodejs, "Node.js"),
+        (dev_spring, "Spring"),
+        (dev_django, "django"),
+        (dev_javascript , "JavaScript"),
+    }
     devtool = models.CharField(choices = dev_choices, max_length=50, null=True, blank=True, help_text="예상 개발툴") 
     created_at = models.DateTimeField(default=datetime.now(), blank=True)
     updated_at = models.DateTimeField(auto_now=True)

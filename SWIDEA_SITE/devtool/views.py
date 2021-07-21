@@ -15,7 +15,6 @@ def devtool_detail(request, pk):
         'tool': tool,
     }
     return render(request, 'devtool/dev_detail.html', ctx)
-    pass
 
 def devtool_create(request):
     if request.method == 'POST':

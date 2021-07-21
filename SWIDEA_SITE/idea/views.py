@@ -7,14 +7,14 @@ def idea_list(request):
     ctx = { #데이터를 플레이팅
         "all_list": all_list,
     }
-    return render(request, "idea/list.html", ctx)
+    return render(request, "idea/list.html", ctx) ###"idea/list.html", 'devtool/dev_detail.html', 이따가 삭제, dev_detail.html도
 
 def idea_detail(request, pk):
     idea = IdeaList.objects.get(pk=pk)
     ctx = {
         "idea": idea,
     }
-    return render(request, "idea/detail.html", ctx)
+    return render(request, "idea/detail.html",  ctx)
 
 def idea_create(request):
     if request.method == 'POST':
