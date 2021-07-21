@@ -1,5 +1,6 @@
 from devtool.models import Devtool
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, redirect, render
+from .forms import DevForm
 
 def devtool_list(request):
     all = Devtool.objects.all()
@@ -17,10 +18,30 @@ def devtool_detail(request, pk):
     pass
 
 def devtool_create(request):
-    pass
+    if request.method == 'POST':
+        form = DevForm(request.POST)
+        if form.is_valid():
+            dev = form.save()
+            return redirect('devtool:devtool_list')
+    else:
+        form = DevForm()
+        ctx = {'form': form}
+        return render(request, 'devtool/dev_form.html', ctx)
 
-def devtool_update(request):
-    pass
+def devtool_update(request, pk):
+    dev = get_object_or_404(Devtool, pk=pk)
 
-def devtool_delete(request):
-    pass
+    if request.method == 'POST':
+        form = DevForm(request.POST, instance=dev)
+        if form.is_valid():
+            dev = form.save()
+            return redirect('devtool:devtool_detail', pk)
+    else:
+        form = DevForm(instance=dev)
+        ctx = {'form': form}
+        return render(request, 'devtool/dev_form.html', ctx)
+
+def devtool_delete(request, pk):
+    dev = Devtool.objects.get(pk=pk)
+    dev.delete()
+    return redirect('devtool:devtool_list')

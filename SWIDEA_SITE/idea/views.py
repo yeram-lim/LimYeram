@@ -42,6 +42,6 @@ def idea_update(request, pk):
         return render(request, 'idea/form.html', context=ctx)
 
 def idea_delete(request, pk):
-    post = IdeaList.objects.get(pk=pk)
-    post.delete()
+    idea = IdeaList.objects.get(pk=pk)
+    idea.delete()
     return redirect('idea:idea_list')

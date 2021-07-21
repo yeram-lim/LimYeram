@@ -13,7 +13,7 @@
         <h2>My SW Idea Management</h1>
         <a href="{% url "idea:idea_create" %}"><h4>아이디어 등록</h4></a>
         <a href="{% url "idea:idea_list" %}"><h4>아이디어 관리</h4></a>
-        <h4>개발툴 등록</h4>
+        <a href="{% url "devtool:devtool_create" %}"><h4>개발툴 등록</h4></a>
         <a href="{% url "devtool:devtool_list" %}"><h4>개발툴 관리</h4></a>
 
         {% block content %} <!--block은 상속하려면 꼭 써야한다.-->
