@@ -22,7 +22,7 @@ def devtool_create(request):
         form = DevForm(request.POST)
         if form.is_valid():
             dev = form.save()
-            return redirect('devtool:devtool_list')
+            return redirect('devtool:devtool_detail', dev.id)
     else:
         form = DevForm()
         ctx = {'form': form}

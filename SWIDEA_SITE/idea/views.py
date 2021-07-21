@@ -21,7 +21,7 @@ def idea_create(request):
         form = IdeaForm(request.POST, request.FILES) #, instance=idea 이따가 추가해보기
         if form.is_valid():
             idea = form.save() #ModelForm에서 제공
-            return redirect('idea:idea_list')
+            return redirect('idea:idea_detail', idea.id)
     else:
         form = IdeaForm()#instance=idea
         ctx = {'form': form}
