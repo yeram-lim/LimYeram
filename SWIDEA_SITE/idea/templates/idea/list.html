@@ -1,19 +1,17 @@
 {% extends 'layout.html' %}
 {% load static %}
 
-{% block title %}My SW Idea Management{% endblock %}
-
 {% block content %}
     <h1>Idea List</h1>
     <h4>나의 아이디어를 잊지 말고 기록해보세요</h4>
     <ul>
         {% for idea in all_list %}
             <li>
-                {% if idea.photo %} <!--사진이 없으면 그냥 원래 화면 잘 나오게 하기-->
-                    <img src="{{ idea.photo.url }}" style="max-width: 40%;"/><br/>
+                {% if idea.image %} <!--사진이 없으면 그냥 원래 화면 잘 나오게 하기-->
+                    <img src="{{ idea.image.url }}" style="max-width: 40%;"/><br/>
                 {% endif %} <br/>
-                <a href = "{{ idea.get_absolute_url }}">{{idea.idea}}</a><br/>
-                예상 개발 툴: {{idea.dev_tool}}<br/>
+                <a href = "{{ idea.get_absolute_url }}">{{idea.title}}</a><br/>
+                예상 개발 툴: {{idea.devtool}}<br/>
                 아이디어 관심도: {{idea.interest}}<br/>
             </li>
         {% endfor %}

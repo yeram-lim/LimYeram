@@ -16,9 +16,9 @@ def idea_detail(request, pk):
     }
     return render(request, "idea/detail.html", ctx)
 
-def idea_create(request, idea=None):
+def idea_create(request):
     if request.method == 'POST':
-        form = IdeaForm(request.POST) #, request.FILES, instance=idea 이따가 추가해보기
+        form = IdeaForm(request.POST, request.FILES) #, instance=idea 이따가 추가해보기
         if form.is_valid():
             idea = form.save() #ModelForm에서 제공
             return redirect('idea:idea_list')

@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+    <h1>DevTool List</h1>
+    <h4>개발툴 목록 페이지입니다. 자신이 사용가능한 개발툴의 목록을 확인해 보세요.</h4>
+    <ul>
+        {% for devtool in all %}
+        <li>
+            <h3>{{ devtool.name}}</h3>
+            <hr/>
+            <h4>{{ devtool.kind}}</h4>
+            <h5>{{ devtool.description}}</h5>
+        </li>
+
+        {% endfor %}
+    </ul>
+
+{% endblock %}

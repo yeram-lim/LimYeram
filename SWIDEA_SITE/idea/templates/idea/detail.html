@@ -1,22 +1,20 @@
 {% extends 'layout.html' %}
 {% load static %}
 
-{% block title %}My SW Idea Management{% endblock %}
-
 {% block content %}
     <h1>Idea Detail</h1>
     <h4>아이디어 세부내용 페이지입니다. 당신이 구현하려 한 아이디어들을 자세히 살펴보세요.</h4>
     <ul>
-        {% if idea.photo %} <!--사진이 없으면 그냥 원래 화면 잘 나오게 하기-->
-            <img src="{{ idea.photo.url }}" style="max-width: 40%;"/><br/>
+        {% if idea.image %} <!--사진이 없으면 그냥 원래 화면 잘 나오게 하기-->
+            <img src="{{ idea.image.url }}" style="max-width: 40%;"/><br/>
         {% endif %} <br/>
-        <h2>{{idea.idea}}</h2><br/>
+        <h2>{{idea.title}}</h2><br/>
         1) 아이디어 관심도: <br/>
         {{idea.interest}}<br/>
         2) 예상 개발 툴: <br/>
-        {{idea.dev_tool}}<br/>
+        {{idea.devtool}}<br/>
         3) 아이디어 설명: <br/>
-        {{idea.desc}}<br/>
+        {{idea.content}}<br/>
     </ul>
     <a href="{% url "idea:idea_delete" idea.id %}">삭제</a>
     <a href="{% url "idea:idea_list" %}">목록</a>
