@@ -6,7 +6,7 @@
         <br/>
         <img src="{{post.image.url}}">
         <br/>
-        {{post.title}}
+        <a href="{% url "piro:post_detail" post.pk %}">{{post.title}}</a>
         {{post.content}}
         {% for comment in comments %}
             {{comment.comment}}

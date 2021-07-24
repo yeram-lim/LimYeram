@@ -1,0 +1,13 @@
+{% extends 'piro/layout.html' %}
+{% load static %}
+
+{% block content %}
+    <br/>
+    <img src="{{post.image.url}}">
+    <br/>
+    {{post.title}}
+    {{post.content}}
+    {% for comment in comments %}
+        {{comment.comment}}
+    {% endfor %}
+{% endblock %}

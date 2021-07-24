@@ -12,7 +12,11 @@ def post_list(request):
     return render(request, 'piro/post_list.html', ctx)
 
 def post_detail(request, pk):
-    pass
+    post = Post.objects.get(pk=pk)
+    ctx = {
+        "post": post,
+    }
+    return render(request, 'piro/post_detail.html', ctx)
 
 def post_create(request):
     pass
