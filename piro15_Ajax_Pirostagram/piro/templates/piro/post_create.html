@@ -1,0 +1,12 @@
+{% extends 'piro/layout.html' %}
+{% load static %}
+
+{% block content %}
+    <form action="" method="POST" enctype="multipart/form-data" autocomplete="off">
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+        <input type="submit" value="POST">
+    </form>
+{% endblock %}

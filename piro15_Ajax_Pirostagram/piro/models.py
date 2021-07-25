@@ -8,8 +8,8 @@ class Post(models.Model):
     content = models.TextField(verbose_name='내용')
     image = models.ImageField(verbose_name='사진', upload_to="post_image/%Y/%m/%d/", null=True, blank=True)
     
-    like = models.IntegerField()
-    dislike = models.IntegerField()
+    like = models.IntegerField(null=True, blank=True)
+    dislike = models.IntegerField(null=True, blank=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

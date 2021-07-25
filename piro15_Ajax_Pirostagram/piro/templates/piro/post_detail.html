@@ -3,7 +3,9 @@
 
 {% block content %}
     <br/>
-    <img src="{{post.image.url}}">
+    {% if post.image %}
+        <img src="{{post.image.url}}">
+    {% endif %}
     <br/>
     {{post.title}}
     {{post.content}}

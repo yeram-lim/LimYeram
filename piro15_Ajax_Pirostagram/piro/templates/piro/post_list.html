@@ -4,7 +4,9 @@
 {% block content %}
     {% for post in list %}
         <br/>
-        <img src="{{post.image.url}}">
+        {% if post.image %}
+            <img src="{{post.image.url}}" style="max-width: 40%;">
+        {% endif %}
         <br/>
         <a href="{% url "piro:post_detail" post.pk %}">{{post.title}}</a>
         {{post.content}}
