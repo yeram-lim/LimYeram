@@ -2,16 +2,38 @@
 {% load static %}
 
 {% block content %}
+<div class="main__container">
     {% for post in list %}
         <br/>
-        {% if post.image %}
-            <img src="{{post.image.url}}" style="max-width: 40%;">
-        {% endif %}
-        <br/>
-        <a href="{% url "piro:post_detail" post.pk %}">{{post.title}}</a>
-        {{post.content}}
-        {% for comment in comments %}
-            {{comment.comment}}
-        {% endfor %}
-    {% endfor %}
+        <div class="card post__container post-id-{{ post.id }}">
+            <div class="card-body">
+                <div class="post__img">
+                    {% if post.image %}
+                        <img src="{{post.image.url}}" style="max-width: 40%;">
+                    {% endif %}
+                    <br/>
+                    <div class="card-title">
+                        <a href="{% url "piro:post_detail" post.pk %}">{{post.title}}</a>
+                    </div>
+                    <div class="card-text">{{post.content}}</div>
+                    {% for comment in comments %}
+                        {{comment.comment}}
+                    {% endfor %}                      
+                </div>
+            </div>
+        </div>
+    {% endfor %}    
+</div>
+
+{% endblock %}
+
+{% block extra %}
+    <script>
+        const requestLike = new XMLHttpRequest();
+        const onClickLike = (id) => {
+            const url = '/like_ajax/';
+            requestLike.open('POST', url, true);
+            
+        }
+    </script>
 {% endblock %}
