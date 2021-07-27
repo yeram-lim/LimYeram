@@ -1,7 +1,9 @@
 from django.shortcuts import redirect, render
 from .models import Post, Comment
 from .forms import PostForm
-
+import json
+from django.http.response import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 def post_list(request):
@@ -37,8 +39,21 @@ def post_update(request, pk):
 def post_delete(request, pk):
     pass
 
-def comment_ajax(request):
-    pass
-
+@csrf_exempt
 def like_ajax(request):
+    req = json.loads(request.body)
+    post_id = req['id']
+    button_type = req['type']
+
+    post = Post.objects.get(id=post_id)
+
+    if button_type == 'like':
+        post.like += 1
+    else:
+        pass
+
+    post.save()
+    return JsonResponse({'id': post_id, 'type': button_type})
+
+def comment_ajax(request):
     pass
