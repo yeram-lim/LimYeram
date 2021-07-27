@@ -16,10 +16,13 @@
                         <a href="{% url "piro:post_detail" post.pk %}">{{post.title}}</a>
                     </div>
                     <div class="card-text">{{post.content}}</div>
-                    <div class="btn btn-primary post__like" onclick="onClickLike({{post.id}}, 'like')">Like {{ post.like }}</div>
-                    {% for comment in comments %}
-                        {{comment.comment}}
-                    {% endfor %}                      
+                    <div class="btn btn-primary">
+                        {% if post.like == 0 %}
+                            <div class="post__like" onclick="onClickLike({{ post.id }})">🤍 게시물이 마음에 드시면 좋아요를 눌러주세요!</div>
+                        {% else %}
+                            <div class="post__like" onclick="onClickLike({{ post.id }})">❤ 이 게시물에 좋아요를 누르셨습니다!</div>
+                        {% endif %}                         
+                    </div>
                 </div>
             </div>
         </div>
@@ -30,32 +33,34 @@
 {% block extra %}
     <script>
         const requestLike = new XMLHttpRequest();
-        const onClickLike = (id, type) => {
+        const onClickLike = (id) => {
             const url = '/like_ajax/';
             requestLike.open('POST', url, true);
             requestLike.setRequestHeader( 
                 'Content-Type', 
                 'application/x-www-form-urlencoded'
             );
-            requestLike.send(JSON.stringify({id: id, type:type}))
+            requestLike.send(JSON.stringify({id: id}));
         };
 
         const likeHandleResponse = () => {
             if (requestLike.status < 400) {
-                const {id, type} = JSON.parse(requestLike.response);
-                const element = document.querySelector(`.post-id-${id} .post__${type}`)
+                const id = JSON.parse(requestLike.response);
+                const element = document.querySelector(`.post-id-${id} .post__like`);
                 const originHTML = element.innerHTML;
-                const [buttonType, num] = originHTML.split(' ');
-                const count = Number(num) + 1;
-
-                element.innerHTML = `${buttonType} ${count}`;
-            }
-        }
+                if (originHTML == '🤍 게시물이 마음에 드시면 좋아요를 눌러주세요!'){
+                    originHTML.innerHTML = '❤ 이 게시물에 좋아요를 누르셨습니다!';
+                }
+                else {
+                    originHTML.innerHTML = '🤍 게시물이 마음에 드시면 좋아요를 눌러주세요!';
+                }
+            };
+        };
 
         requestLike.onreadystatechange = () => {
             if (requestLike.readyState === XMLHttpRequest.DONE) {
                 likeHandleResponse();
-            }
-        }
+            };
+        };
     </script>
 {% endblock %}

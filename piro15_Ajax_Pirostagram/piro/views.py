@@ -43,17 +43,16 @@ def post_delete(request, pk):
 def like_ajax(request):
     req = json.loads(request.body)
     post_id = req['id']
-    button_type = req['type']
 
     post = Post.objects.get(id=post_id)
 
-    if button_type == 'like':
+    if post.like == 0:
         post.like += 1
-    else:
-        pass
+    else :
+        post.like -= 1
 
     post.save()
-    return JsonResponse({'id': post_id, 'type': button_type})
+    return JsonResponse({'id': post_id})
 
 def comment_ajax(request):
     pass
