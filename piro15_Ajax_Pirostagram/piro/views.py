@@ -54,5 +54,23 @@ def like_ajax(request):
     post.save()
     return JsonResponse({'id': post_id})
 
-def comment_ajax(request):
-    pass
+@csrf_exempt
+def comment_write(request, pk):
+    req = json.loads(request.body)
+    post_id = req['id']
+    button_type = req['type']
+    comment_content = req['content']
+
+    current_post = Post.objects.get(id=post_id)
+    comments = Comment.objects.filter(post=current_post)
+
+    if button_type == 'write':
+        comments.content = comment_content
+    else:
+        pass
+    current_post.save()
+    comments.save()
+    return JsonResponse({'id': post_id, 'content': comment_content})
+
+    
+    

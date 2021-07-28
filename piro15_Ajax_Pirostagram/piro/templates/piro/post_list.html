@@ -16,12 +16,24 @@
                         <a href="{% url "piro:post_detail" post.pk %}">{{post.title}}</a>
                     </div>
                     <div class="card-text">{{post.content}}</div>
+
+                    <div class="comment_list">
+                        {% for comment in post.comment_list.all %}
+                            <div>{{ comment.content }}</div>
+                        {% endfor %}
+                    </div>
+
                     <div class="btn btn-primary">
                         {% if post.like == 0 %}
                             <div class="post__like" onclick="onClickLike({{ post.id }})">🤍 게시물이 마음에 드시면 좋아요를 눌러주세요!</div>
                         {% else %}
                             <div class="post__like" onclick="onClickLike({{ post.id }})">❤ 이 게시물에 좋아요를 누르셨습니다!</div>
                         {% endif %}                         
+                    </div>
+
+                    <div class="comment_body">
+                        <input class="comment_wirte" type="text" name="content" placeholder="댓글 달기..">
+                        <button onclick="onClickWriteComment({{post.id}}, 'write')">게시</button>
                     </div>
                 </div>
             </div>
@@ -62,5 +74,34 @@
                 likeHandleResponse();
             };
         };
+
+
+        const requestComment = new XMLHttpRequest();
+        const onClickWriteComment = (id, type) => {
+            const url = '/comment_write/';
+            requestComment.open('POST', url, true);
+            requestComment.setRequestHeader(
+                'Content-Type', 
+                'application/x-www-form-urlencoded'
+            );
+            content = document.querySelector(`.post-id-${id} .comment_wirte`)
+            requestComment.send(JSON.stringify({id: id, type: type, content: content}));
+        };
+
+        const commentWriteHandleResponse = () => {
+            if (requestComment.status < 400 ) {
+                const {id, content} = JSON.parse(requestComment.response);
+                const element = document.querySelector(`.post-id-${id} .comment_list`);
+                element.innerHTML = `<div>${content}</div>`;
+            }
+        }
+
+        requestComment.onreadystatechange = () => {
+            if (requestComment.readyState === XMLHttpRequest.DONE) {
+                commentWriteHandleResponse();
+            }
+        }
     </script>
+
+    
 {% endblock %}
